@@ -1,11 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { Dict } from "@/lib/dictionary";
 import { href, type Locale } from "@/lib/i18n";
 import { isActive, navItems, scrollTopIfCurrent } from "@/lib/nav";
 import LanguageSwitcher from "./LanguageSwitcher";
+import SectionLink from "./SectionLink";
 import SocialLinks from "./SocialLinks";
 
 export default function MobileMenu({
@@ -68,7 +68,7 @@ export default function MobileMenu({
         aria-expanded={open}
         aria-controls="mobile-menu"
         onClick={() => setOpen(true)}
-        className="flex items-center gap-2.5 rounded-full border border-line py-2 pl-4 pr-3 text-sm font-semibold"
+        className="flex items-center gap-2.5 rounded-md border border-line py-2 pl-4 pr-3 text-sm font-semibold"
       >
         {t.menu}
         <span aria-hidden className="flex w-4 flex-col gap-[4px]">
@@ -90,7 +90,7 @@ export default function MobileMenu({
             <button
               type="button"
               onClick={close}
-              className="flex items-center gap-2.5 rounded-full border border-line py-2 pl-4 pr-3 text-sm font-semibold"
+              className="flex items-center gap-2.5 rounded-md border border-line py-2 pl-4 pr-3 text-sm font-semibold"
             >
               {t.close}
               <span aria-hidden className="relative block size-4">
@@ -106,7 +106,7 @@ export default function MobileMenu({
                 const active = isActive(pathname, lang, item.path);
                 return (
                   <li key={item.key} className="border-b border-line">
-                    <Link
+                    <SectionLink
                       href={href(lang, item.path)}
                       onClick={(e) => {
                         setOpen(false);
@@ -126,7 +126,25 @@ export default function MobileMenu({
                         {t[item.key]}
                       </span>
                       {active && <span aria-hidden className="ml-auto size-2 self-center rounded-full bg-ink" />}
-                    </Link>
+                    </SectionLink>
+                    {item.key === "media" && (
+                      <ul className="mb-3 ml-10 flex gap-6 text-base">
+                        {[
+                          { path: "/media#photos", label: t.mediaPhotos },
+                          { path: "/media#videos", label: t.mediaVideos },
+                        ].map((sub) => (
+                          <li key={sub.path}>
+                            <SectionLink
+                              href={href(lang, sub.path)}
+                              onClick={() => setOpen(false)}
+                              className="inline-flex min-h-11 items-center text-ink-soft"
+                            >
+                              {sub.label}
+                            </SectionLink>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </li>
                 );
               })}

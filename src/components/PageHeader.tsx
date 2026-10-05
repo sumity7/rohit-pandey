@@ -21,16 +21,19 @@ export default function PageHeader({
   intro,
   aside,
   media,
+  mediaSide = "right",
   tone = "deep",
   titleSize = "lg",
 }: {
   lang: Locale;
   trail: Crumb[];
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   intro?: string;
   aside?: React.ReactNode;
   media?: React.ReactNode;
+  /** Which side the media sits on from md up. On phones it always follows the title. */
+  mediaSide?: "left" | "right";
   tone?: "deep" | "gradient";
   titleSize?: "xl" | "lg" | "md";
 }) {
@@ -40,7 +43,7 @@ export default function PageHeader({
 
   const titleClass =
     titleSize === "xl"
-      ? "font-display text-[clamp(2.75rem,1.6rem+5vw,5.5rem)] font-semibold leading-[0.98] tracking-[-0.035em] [&:lang(hi)]:leading-[1.2] [&:lang(hi)]:tracking-normal"
+      ? "font-heading text-[clamp(2.75rem,1.6rem+5vw,5.5rem)] leading-[1.02] [&:lang(hi)]:leading-[1.2] [&:lang(hi)]:tracking-normal"
       : titleSize === "md"
         ? "title-md"
         : "title-lg";
@@ -48,7 +51,7 @@ export default function PageHeader({
   return (
     <header
       className={`on-dark relative overflow-hidden ${tone === "gradient" ? "surface-gradient" : "surface-deep"} ${
-        media ? "flag-wedge [--wb-x:40%] [--wt-x:100%] [--wt-y:62%] md:[--wb-x:74%] md:[--wt-x:100%] md:[--wt-y:calc(var(--nav-h)+0.75rem)]" : ""
+        media && mediaSide === "right" ? "flag-wedge [--wb-x:40%] [--wt-x:100%] [--wt-y:62%] md:[--wb-x:74%] md:[--wt-x:100%] md:[--wt-y:calc(var(--nav-h)+0.75rem)]" : ""
       }`}
     >
       <JsonLd data={breadcrumbJsonLd(lang, trail)} />
@@ -64,7 +67,7 @@ export default function PageHeader({
                       {c.name}
                     </span>
                   ) : (
-                    <Link href={href(lang, c.path)} className="hover:text-ink">
+                    <Link href={href(lang, c.path)} className="inline-flex min-h-11 items-center hover:text-ink">
                       {c.name}
                     </Link>
                   )}
@@ -76,12 +79,19 @@ export default function PageHeader({
         </nav>
 
         <div className={`grid gap-10 md:grid-cols-12 md:gap-8 ${media ? "items-end" : "md:items-end"}`}>
-          <div className={`pb-12 pt-10 md:pb-16 md:pt-14 ${side ? "md:col-span-7" : "md:col-span-9"}`}>
-            <p className="eyebrow">{eyebrow}</p>
-            <h1 className={`mt-5 ${titleClass}`}>{title}</h1>
+          <div
+            className={`pb-12 pt-10 md:pb-16 md:pt-14 ${
+              media && mediaSide === "left" ? "order-1 md:order-2 md:col-span-6" : side ? "md:col-span-7" : "md:col-span-9"
+            }`}
+          >
+            {eyebrow && <p className="eyebrow">{eyebrow}</p>}
+            <h1 className={`${eyebrow ? "mt-5" : ""} ${titleClass}`}>{title}</h1>
             {intro && <p className="lede mt-5 max-w-2xl">{intro}</p>}
           </div>
-          {media && <div className="-mt-4 flex justify-end self-end md:col-span-5 md:mt-0">{media}</div>}
+          {media && mediaSide === "left" && (
+            <div className="order-2 pb-12 md:order-1 md:col-span-6 md:pb-16 md:pt-14">{media}</div>
+          )}
+          {media && mediaSide === "right" && <div className="-mt-4 flex justify-end self-end md:col-span-5 md:mt-0">{media}</div>}
           {!media && aside && <div className="pb-12 md:col-span-5 md:pb-16">{aside}</div>}
         </div>
       </div>

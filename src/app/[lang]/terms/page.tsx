@@ -16,7 +16,6 @@ export default async function TermsPage({ params }: PageProps<"/[lang]/terms">) 
       <PageHeader
         lang={lang}
         trail={[{ name: t.footer.terms, path: "/terms" }]}
-        eyebrow={t.footer.terms}
         title={t.meta.terms.title}
         intro={t.meta.terms.description}
         titleSize="md"

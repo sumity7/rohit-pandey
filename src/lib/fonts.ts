@@ -1,5 +1,14 @@
-import { Anek_Devanagari, Italiana, Noto_Sans_Devanagari } from "next/font/google";
+import { Instrument_Sans, Italiana, Mukta, Tiro_Devanagari_Hindi } from "next/font/google";
 
+/** Body font (Latin). */
+export const instrument = Instrument_Sans({
+  subsets: ["latin"],
+  axes: ["wdth"],
+  variable: "--font-instrument",
+  display: "swap",
+});
+
+/** Heading font (Latin): main headings only. */
 export const italiana = Italiana({
   subsets: ["latin"],
   weight: "400",
@@ -7,21 +16,25 @@ export const italiana = Italiana({
   display: "swap",
 });
 
-// Devanagari faces only cover Devanagari codepoints in the stacks; Latin text
-// always renders in Italiana. Not preloaded on English pages.
-export const anek = Anek_Devanagari({
+// Devanagari faces only cover Devanagari codepoints in the stacks, so Latin
+// text always renders in the faces above. Not preloaded on English pages.
+
+/** Body font (Devanagari), for /hi. */
+export const mukta = Mukta({
   subsets: ["devanagari"],
-  axes: ["wdth"],
-  variable: "--font-anek",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-mukta",
   display: "swap",
   preload: false,
 });
 
-export const notoDeva = Noto_Sans_Devanagari({
+/** Heading font (Devanagari), the serif partner of Italiana, for /hi headings. One weight only. */
+export const tiroDeva = Tiro_Devanagari_Hindi({
   subsets: ["devanagari"],
-  variable: "--font-noto-deva",
+  weight: "400",
+  variable: "--font-tiro-deva",
   display: "swap",
   preload: false,
 });
 
-export const fontVars = `${italiana.variable} ${anek.variable} ${notoDeva.variable}`;
+export const fontVars = `${instrument.variable} ${italiana.variable} ${mukta.variable} ${tiroDeva.variable}`;

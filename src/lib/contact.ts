@@ -1,4 +1,4 @@
-/** Shared contact-form validation — used by the client form and the API route. */
+/** Shared contact-form validation, used by the client form and the API route. */
 
 export type ContactInput = {
   name: string;
@@ -7,7 +7,7 @@ export type ContactInput = {
   topic: string;
   message: string;
   consent: boolean;
-  /** honeypot — must stay empty */
+  /** honeypot, must stay empty */
   company?: string;
 };
 

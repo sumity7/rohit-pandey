@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import ContactStrip from "@/components/ContactStrip";
-import PortraitFrame from "@/components/PortraitFrame";
 import PageHeader from "@/components/PageHeader";
 import PublicLifeSection from "@/components/PublicLifeSection";
-import { images } from "@/lib/content";
+import { getUpdate } from "@/lib/content";
 import { resolveLang } from "@/lib/page";
 import { pageMetadata } from "@/lib/seo";
 
@@ -19,28 +19,33 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/public-lif
 
 export default async function PublicLifePage({ params }: PageProps<"/[lang]/public-life">) {
   const { lang, t } = await resolveLang(params);
+  // The header shows Rohit Pandey with the public: a village meeting in the Khalilabad area
+  const photo = getUpdate("rajbhar-samaj-meeting-mohanbara")?.image;
+
   return (
     <>
       <PageHeader
         lang={lang}
         trail={[{ name: t.nav.publicLife, path: "/public-life" }]}
-        eyebrow={t.publicLife.label}
         title={t.meta.publicLife.title}
         intro={t.meta.publicLife.description}
         tone="gradient"
+        mediaSide="left"
         media={
-          <PortraitFrame
-            image={images.publicLife}
-            alt={t.publicLife.photoAlt}
-            sizes="(min-width: 768px) 20rem, 64vw"
-            preload
-            flush
-            inset="pt-[10%] px-[6%]"
-            className="w-[min(64vw,16rem)] md:w-[min(100%,20rem)]"
-          />
+          photo && (
+            <Image
+              src={photo.src}
+              width={photo.width}
+              height={photo.height}
+              alt={photo.alt[lang]}
+              sizes="(min-width: 768px) 48vw, 92vw"
+              priority
+              className="block aspect-[3/2] w-full rounded-md object-cover shadow-xl"
+            />
+          )
         }
       />
-      <PublicLifeSection lang={lang} t={t} variant="page" />
+      <PublicLifeSection lang={lang} t={t} />
       <ContactStrip lang={lang} t={t} />
     </>
   );

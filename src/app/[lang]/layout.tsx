@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import "../globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import StickyContact from "@/components/StickyContact";
 import { getDictionary } from "@/lib/dictionary";
 import { fontVars } from "@/lib/fonts";
 import { hasLocale, htmlLang, locales } from "@/lib/i18n";
@@ -20,7 +21,7 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
   const t = getDictionary(lang);
   return {
     metadataBase: new URL(SITE_URL),
-    title: { default: t.meta.home.title, template: `%s · ${t.person.name}` },
+    title: { default: t.meta.home.title, template: `%s | ${t.person.name}` },
     description: t.meta.home.description,
     applicationName: t.person.name,
     authors: [{ name: "Rohit Pandey" }],
@@ -53,6 +54,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
           {children}
         </main>
         <Footer lang={lang} t={t} />
+        <StickyContact t={t} />
       </body>
     </html>
   );

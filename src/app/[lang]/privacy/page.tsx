@@ -16,7 +16,6 @@ export default async function PrivacyPage({ params }: PageProps<"/[lang]/privacy
       <PageHeader
         lang={lang}
         trail={[{ name: t.footer.privacy, path: "/privacy" }]}
-        eyebrow={t.footer.privacy}
         title={t.meta.privacy.title}
         intro={t.meta.privacy.description}
         titleSize="md"

@@ -25,7 +25,6 @@ export default function ContactStrip({ lang, t }: { lang: Locale; t: Dict }) {
         </div>
         <Link href={href(lang, "/contact")} className="btn shrink-0 bg-green-dk text-white hover:bg-green-deep">
           {t.contact.title}
-          <span aria-hidden>→</span>
         </Link>
       </div>
     </section>

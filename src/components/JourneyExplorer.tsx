@@ -13,7 +13,7 @@ export type Chapter = {
 
 /**
  * Milestones. "steps" (home, desktop): a horizontal indicator selects one
- * milestone and a single panel below shows it in full — nothing scrolls
+ * milestone and a single panel below shows it in full, nothing scrolls
  * sideways. Below lg, and in "timeline" mode, every milestone is listed on a
  * vertical timeline instead.
  */

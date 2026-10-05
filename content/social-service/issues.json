@@ -1,0 +1,77 @@
+{
+  "_comment": "DRAFT. These six issue areas are a first draft for the campaign team to confirm or rewrite before the site goes live. Icons are Tabler icon names.",
+  "issues": [
+    {
+      "id": "road",
+      "icon": "road",
+      "en": {
+        "title": "Roads and drainage",
+        "text": "Pucca roads and working drains for every ward and village, starting with the worst stretches."
+      },
+      "hi": {
+        "title": "सड़क और नाली",
+        "text": "हर वार्ड और गाँव में पक्की सड़क और चालू नालियाँ, सबसे खराब हिस्सों से शुरुआत।"
+      }
+    },
+    {
+      "id": "jobs",
+      "icon": "briefcase",
+      "en": {
+        "title": "Work for young people",
+        "text": "Skill training and local jobs, so young people do not have to leave the district to earn."
+      },
+      "hi": {
+        "title": "युवाओं के लिए रोज़गार",
+        "text": "कौशल प्रशिक्षण और स्थानीय रोज़गार, ताकि युवाओं को कमाने के लिए ज़िला न छोड़ना पड़े।"
+      }
+    },
+    {
+      "id": "legal",
+      "icon": "scale",
+      "en": {
+        "title": "Free legal help",
+        "text": "As an advocate, guidance at the office for families dealing with land, police and pension cases."
+      },
+      "hi": {
+        "title": "निःशुल्क कानूनी सहायता",
+        "text": "ज़मीन, पुलिस और पेंशन के मामलों में परिवारों को कार्यालय पर एक अधिवक्ता का मार्गदर्शन।"
+      }
+    },
+    {
+      "id": "farmers",
+      "icon": "plant-2",
+      "en": {
+        "title": "Farmers and mandi",
+        "text": "Fair prices, timely payments and better access to the mandi for small farmers."
+      },
+      "hi": {
+        "title": "किसान और मंडी",
+        "text": "छोटे किसानों के लिए सही दाम, समय पर भुगतान और मंडी तक बेहतर पहुँच।"
+      }
+    },
+    {
+      "id": "health",
+      "icon": "building-hospital",
+      "en": {
+        "title": "Health centres",
+        "text": "Doctors, medicines and staff at primary health centres across the constituency."
+      },
+      "hi": {
+        "title": "स्वास्थ्य केंद्र",
+        "text": "पूरे क्षेत्र के प्राथमिक स्वास्थ्य केंद्रों पर डॉक्टर, दवाइयाँ और स्टाफ़।"
+      }
+    },
+    {
+      "id": "education",
+      "icon": "school",
+      "en": {
+        "title": "Education for girls",
+        "text": "Safe transport and better schools, so every girl can finish her studies."
+      },
+      "hi": {
+        "title": "बेटियों की शिक्षा",
+        "text": "सुरक्षित आवागमन और बेहतर स्कूल, ताकि हर बेटी अपनी पढ़ाई पूरी कर सके।"
+      }
+    }
+  ]
+}

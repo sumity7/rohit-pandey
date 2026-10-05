@@ -1,6 +1,4 @@
-import Link from "next/link";
 import type { Dict } from "@/lib/dictionary";
-import { href, type Locale } from "@/lib/i18n";
 
 /** The five assembly segments as a route line, Khalilabad highlighted. */
 function Segments({ t }: { t: Dict["location"] }) {
@@ -51,50 +49,17 @@ function Facts({ t }: { t: Dict["location"] }) {
   );
 }
 
-export default function LocationSection({
-  lang,
-  t,
-  variant = "home",
-}: {
-  lang: Locale;
-  t: Dict;
-  variant?: "home" | "page";
-}) {
+export default function LocationSection({ t }: { t: Dict }) {
   const l = t.location;
 
-  if (variant === "page") {
-    return (
-      <section aria-label={l.connectionLabel} className="shell py-16 md:py-24">
-        <div className="grid gap-12 md:grid-cols-12 md:gap-8">
-          <div className="md:col-span-6 lg:col-span-5">
-            <h2 className="title-md text-red">{l.connectionLabel}</h2>
-            <p className="lede mt-5">{l.connection}</p>
-          </div>
-          <div className="md:col-span-6 lg:col-span-6 lg:col-start-7">
-            <Segments t={l} />
-          </div>
-        </div>
-      </section>
-    );
-  }
-
   return (
-    <section aria-labelledby="location-title" className="surface-tint py-20 md:py-28">
-      <div className="shell grid gap-12 md:grid-cols-12 md:items-center md:gap-8">
+    <section aria-label={l.connectionLabel} className="shell py-16 md:py-28">
+      <div className="grid gap-12 md:grid-cols-12 md:gap-8">
         <div className="md:col-span-6 lg:col-span-5">
-          <p className="eyebrow">{l.label}</p>
-          <h2 id="location-title" className="title-lg mt-5 text-red">
-            {l.name}
-          </h2>
-          <p className="mt-2 font-medium text-ink-soft">{l.sub}</p>
-          <p className="lede mt-7">{l.intro}</p>
-          <p className="mt-4 text-ink-soft">{l.connection}</p>
-          <Link href={href(lang, "/khalilabad")} className="link-draw mt-7 text-red-dk">
-            {l.more} <span aria-hidden>→</span>
-          </Link>
+          <h2 className="title-md text-red">{l.connectionLabel}</h2>
+          <p className="lede mt-5">{l.connection}</p>
         </div>
-        <div className="grid content-start gap-12 md:col-span-6 lg:col-span-6 lg:col-start-7">
-          <Facts t={l} />
+        <div className="md:col-span-6 lg:col-span-6 lg:col-start-7">
           <Segments t={l} />
         </div>
       </div>

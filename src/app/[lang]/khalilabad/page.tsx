@@ -28,7 +28,7 @@ export default async function KhalilabadPage({ params }: PageProps<"/[lang]/khal
         intro={t.location.intro}
         aside={<LocationFacts t={t.location} />}
       />
-      <LocationSection lang={lang} t={t} variant="page" />
+      <LocationSection t={t} />
       <ContactStrip lang={lang} t={t} />
     </>
   );

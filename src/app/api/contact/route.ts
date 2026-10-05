@@ -43,7 +43,7 @@ export async function POST(request: Request) {
 
   if (!webhook) {
     if (process.env.NODE_ENV !== "production") {
-      console.info("[contact] CONTACT_WEBHOOK_URL not set — message logged in development only:", payload);
+      console.info("[contact] CONTACT_WEBHOOK_URL not set, message logged in development only:", payload);
       return Response.json({ ok: true, dev: true });
     }
     return Response.json({ ok: false, error: "not_configured" }, { status: 503 });

@@ -123,7 +123,7 @@ export default function MediaLightbox({
 
           <div className="shell flex shrink-0 flex-col gap-4 py-5 md:flex-row md:items-center md:justify-between">
             <p className="max-w-3xl text-sm text-ink-soft">
-              <span className="mr-2 font-semibold text-red">{item.tag}</span>
+              
               {item.caption}
             </p>
             <div className="flex gap-2 md:hidden">

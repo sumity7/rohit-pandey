@@ -22,6 +22,12 @@ function Icon({ id }: { id: SocialId }) {
         <circle cx="17.2" cy="6.8" r="0.9" fill="currentColor" stroke="none" />
       </svg>
     );
+  if (id === "youtube")
+    return (
+      <svg {...common} fill="currentColor">
+        <path d="M21.6 7.2a2.5 2.5 0 0 0-1.76-1.77C18.27 5 12 5 12 5s-6.27 0-7.84.43A2.5 2.5 0 0 0 2.4 7.2C2 8.78 2 12 2 12s0 3.22.4 4.8a2.5 2.5 0 0 0 1.76 1.77C5.73 19 12 19 12 19s6.27 0 7.84-.43a2.5 2.5 0 0 0 1.76-1.77C22 15.22 22 12 22 12s0-3.22-.4-4.8ZM10 15V9l5.2 3L10 15Z" />
+      </svg>
+    );
   return (
     <svg {...common} fill="currentColor">
       <path d="M17.6 3.5h2.9l-6.3 7.2 7.4 9.8h-5.8l-4.5-5.9-5.2 5.9H3.2l6.7-7.7L2.8 3.5h5.9l4.1 5.4 4.8-5.4Zm-1 15.3h1.6L7.5 5.1H5.8l10.8 13.7Z" />
@@ -45,13 +51,13 @@ export default function SocialLinks({
               href={s.url}
               target="_blank"
               rel="noopener noreferrer me"
-              className="group flex items-center gap-4 py-4 transition-colors hover:text-red"
+              className="group flex min-h-14 items-center gap-4 py-3 transition-colors hover:text-red"
             >
               <span className="grid size-9 place-items-center rounded-full border border-line transition-colors group-hover:border-red">
                 <Icon id={s.id} />
               </span>
               <span className="text-sm font-semibold">{s.label}</span>
-              <span className="ml-auto min-w-0 truncate text-sm text-muted">{s.handle}</span>
+              {s.handle && <span className="ml-auto min-w-0 truncate text-sm text-muted">{s.handle}</span>}
             </a>
           </li>
         ))}
@@ -67,9 +73,9 @@ export default function SocialLinks({
             href={s.url}
             target="_blank"
             rel="noopener noreferrer me"
-            aria-label={`${s.label} — ${s.handle}`}
-            title={`${s.label} · ${s.handle}`}
-            className="grid size-10 place-items-center rounded-full border border-line text-ink-soft transition-colors hover:border-red hover:text-red"
+            aria-label={s.label}
+            title={s.label}
+            className="grid size-11 place-items-center rounded-full border border-line text-ink-soft transition-colors hover:border-red hover:text-red"
           >
             <Icon id={s.id} />
           </a>

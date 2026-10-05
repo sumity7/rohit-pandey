@@ -20,7 +20,7 @@ export default function GlobalNotFound() {
           </p>
           <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3">
             <Link className="link-draw" href="/en">
-              Rohit Pandey — Home
+              Rohit Pandey: Home
             </Link>
             <Link className="link-draw" href="/hi" lang="hi">
               मुखपृष्ठ (हिंदी)

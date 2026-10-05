@@ -1,0 +1,117 @@
+{
+  "_comment": "Ground activity, newest first. date is YYYY-MM-DD, or YYYY-MM when only the month is known. category is people, org, office or party. issues lists issue ids from issues.json (empty for now). Every slug must match an update page. Add an item only when its date is confirmed.",
+  "items": [
+    {
+      "slug": "chiutna-chauraha-office-khalilabad",
+      "date": "2026-10-04",
+      "category": "office",
+      "issues": [],
+      "image": "/images/rohit-pandey-chiutna-chauraha-office.webp",
+      "place": { "en": "Chiutna Chauraha, Khalilabad", "hi": "चिउटना चौराहा, खलीलाबाद" },
+      "title": {
+        "en": "At the Chiutna Chauraha office with colleagues and residents",
+        "hi": "चिउटना चौराहा स्थित कार्यालय पर साथियों और क्षेत्रवासियों के साथ"
+      },
+      "summary": {
+        "en": "He reviewed arrangements at the office and sat with colleagues and residents to discuss local problems and the work ahead for the organisation.",
+        "hi": "कार्यालय पर व्यवस्थाओं का जायजा लिया और साथियों एवं क्षेत्रवासियों से जनहित और संगठन को मज़बूत करने पर चर्चा की।"
+      }
+    },
+    {
+      "slug": "courtesy-visit-kushal-tiwari-gorakhpur",
+      "date": "2026-09-24",
+      "category": "party",
+      "issues": [],
+      "image": "/images/rohit-pandey-kushal-tiwari-gorakhpur.webp",
+      "place": { "en": "Gorakhpur", "hi": "गोरखपुर" },
+      "title": {
+        "en": "Courtesy visit to former MP Shri Bhishma Shankar Tiwari (Kushal Tiwari)",
+        "hi": "पूर्व सांसद श्री भीष्म शंकर तिवारी (कुशल तिवारी) जी से शिष्टाचार भेंट"
+      },
+      "summary": {
+        "en": "Met the former Sant Kabir Nagar MP at Tiwari Hata and discussed the 2027 Assembly election.",
+        "hi": "तिवारी हाता पहुँचकर संत कबीर नगर के पूर्व सांसद से भेंट की और विधानसभा चुनाव 2027 पर चर्चा की।"
+      }
+    },
+    {
+      "slug": "kekarhwa-chauraha-khalilabad",
+      "date": "2026-09-18",
+      "category": "people",
+      "issues": [],
+      "image": "/images/rohit-pandey-kekarhwa-chauraha-khalilabad.webp",
+      "place": { "en": "Kekarhwa Chauraha, Thurunda Road", "hi": "केकरहवा चौराहा, थूरंडा रोड" },
+      "title": {
+        "en": "Meeting residents at Kekarhwa Chauraha",
+        "hi": "केकरहवा चौराहे पर क्षेत्रवासियों से भेंट"
+      },
+      "summary": {
+        "en": "Asked after their well-being and discussed local concerns and the 2027 election.",
+        "hi": "क्षेत्रवासियों का कुशल क्षेम जाना और क्षेत्र के विषयों तथा चुनाव 2027 पर चर्चा की।"
+      }
+    },
+    {
+      "slug": "among-residents-khalilabad",
+      "date": "2026-09-18",
+      "category": "people",
+      "issues": [],
+      "image": "/videos/rohit-pandey-khalilabad-18-september-poster.webp",
+      "place": { "en": "Khalilabad assembly area", "hi": "खलीलाबाद विधानसभा क्षेत्र" },
+      "title": {
+        "en": "Among the people of the Khalilabad assembly area (video)",
+        "hi": "खलीलाबाद विधानसभा क्षेत्र में क्षेत्रवासियों के बीच (वीडियो)"
+      },
+      "summary": {
+        "en": "A video from his visit among residents across the assembly area.",
+        "hi": "विधानसभा क्षेत्र में क्षेत्रवासियों के बीच दौरे का वीडियो।"
+      }
+    },
+    {
+      "slug": "rajbhar-samaj-meeting-mohanbara",
+      "date": "2026-09-17",
+      "category": "people",
+      "issues": [],
+      "image": "/images/rohit-pandey-mohanbara-rajbhar-samaj-meeting.webp",
+      "place": { "en": "Mohanbara (Bayara)", "hi": "मोहनबरा (बयारा)" },
+      "title": {
+        "en": "Meeting with the Rajbhar community",
+        "hi": "राजभर समाज के साथियों के साथ बैठक"
+      },
+      "summary": {
+        "en": "Met members of the Rajbhar community at Gram Sabha Mohanbara and asked for support in 2027.",
+        "hi": "ग्रामसभा मोहनबरा में राजभर समाज के साथियों से मिलकर 2027 के लिए समर्थन माँगा।"
+      }
+    },
+    {
+      "slug": "booth-sector-review-meeting-khalilabad",
+      "date": "2026-09-08",
+      "category": "org",
+      "issues": [],
+      "image": "/videos/rohit-pandey-booth-sector-review-8-september-poster.webp",
+      "place": { "en": "Shakahari Marriage Hall, Badhgo", "hi": "शाकाहारी मैरिज हॉल, बढ़गो" },
+      "title": {
+        "en": "Review meeting of booth presidents and sector in-charges",
+        "hi": "बूथ अध्यक्षों एवं सेक्टर प्रभारियों की समीक्षा बैठक"
+      },
+      "summary": {
+        "en": "Attended the Samajwadi Party review meeting for the Khalilabad booths and sectors.",
+        "hi": "खलीलाबाद के बूथ और सेक्टर की समाजवादी पार्टी समीक्षा बैठक में शामिल हुए।"
+      }
+    },
+    {
+      "slug": "joins-samajwadi-party",
+      "date": "2026-03",
+      "category": "party",
+      "issues": [],
+      "image": "/images/rohit-pandey-akhilesh-yadav-meeting.webp",
+      "place": { "en": "Lucknow", "hi": "लखनऊ" },
+      "title": {
+        "en": "Joins the Samajwadi Party",
+        "hi": "समाजवादी पार्टी में शामिल"
+      },
+      "summary": {
+        "en": "Joined the party under national president Akhilesh Yadav.",
+        "hi": "राष्ट्रीय अध्यक्ष अखिलेश यादव के नेतृत्व में पार्टी में शामिल हुए।"
+      }
+    }
+  ]
+}

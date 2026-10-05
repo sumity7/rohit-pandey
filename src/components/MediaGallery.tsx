@@ -11,7 +11,6 @@ export type GalleryItem = {
   height: number;
   alt: string;
   caption: string;
-  tag: string;
   focus?: string;
 };
 
@@ -47,12 +46,9 @@ function layoutFor(i: number, count: number): Cell {
 export default function MediaGallery({
   items,
   labels,
-  archiveLabel,
 }: {
   items: GalleryItem[];
   labels: GalleryLabels;
-  /** Heading shown above items beyond the first three */
-  archiveLabel?: string;
 }) {
   const [index, setIndex] = useState<number | null>(null);
 
@@ -85,7 +81,6 @@ export default function MediaGallery({
           </span>
         </button>
         <p className={`mt-3 text-sm text-muted ${i === 0 ? "md:text-[0.9375rem]" : ""}`}>
-          <span className="mr-2 font-semibold text-red">{item.tag}</span>
           {item.caption}
         </p>
       </li>
@@ -101,7 +96,6 @@ export default function MediaGallery({
 
       {rest.length > 0 && (
         <>
-          {archiveLabel && <p className="eyebrow mt-16">{archiveLabel}</p>}
           <ul className="mt-6 grid grid-cols-1 gap-x-5 gap-y-8 md:grid-cols-12">
             {rest.map((item, i) => tile(item, i + 3))}
           </ul>

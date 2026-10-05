@@ -5,10 +5,11 @@ import { navItems } from "@/lib/nav";
 import LanguageSwitcher from "./LanguageSwitcher";
 import Logo from "./Logo";
 import SocialLinks from "./SocialLinks";
+import SectionLink from "./SectionLink";
 
 export default function Footer({ lang, t }: { lang: Locale; t: Dict }) {
   return (
-    <footer className="on-dark surface-deep [--color-ink-soft:rgb(255_255_255/0.7)]">
+    <footer className="on-dark surface-deep pb-14 [--color-ink-soft:rgb(255_255_255/0.7)] md:pb-0">
       <div aria-hidden className="flag-strip" />
       <div className="shell grid gap-12 py-14 md:grid-cols-12 md:py-16">
         <div className="md:col-span-5">
@@ -22,12 +23,12 @@ export default function Footer({ lang, t }: { lang: Locale; t: Dict }) {
 
         <nav aria-label={t.footer.navigate} className="md:col-span-4">
           <p className="eyebrow">{t.footer.navigate}</p>
-          <ul className="mt-5 grid grid-cols-2 gap-x-6 gap-y-2.5 text-[0.9375rem]">
+          <ul className="mt-5 grid grid-cols-2 gap-x-6 text-[0.9375rem]">
             {[...navItems, { key: "khalilabad", path: "/khalilabad" } as const].map((item) => (
               <li key={item.key}>
-                <Link href={href(lang, item.path)} className="text-ink-soft transition-colors hover:text-ink">
+                <SectionLink href={href(lang, item.path)} className="inline-flex min-h-11 items-center text-ink-soft transition-colors hover:text-ink">
                   {t.nav[item.key]}
-                </Link>
+                </SectionLink>
               </li>
             ))}
           </ul>
@@ -43,10 +44,10 @@ export default function Footer({ lang, t }: { lang: Locale; t: Dict }) {
         <div className="shell flex flex-col gap-4 py-6 text-[0.8125rem] text-ink-soft md:flex-row md:items-center md:justify-between">
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <span>© 2026 {t.person.name}</span>
-            <Link href={href(lang, "/privacy")} className="hover:text-ink">
+            <Link href={href(lang, "/privacy")} className="inline-flex min-h-11 items-center hover:text-ink">
               {t.footer.privacy}
             </Link>
-            <Link href={href(lang, "/terms")} className="hover:text-ink">
+            <Link href={href(lang, "/terms")} className="inline-flex min-h-11 items-center hover:text-ink">
               {t.footer.terms}
             </Link>
             <span className="basis-full text-xs md:basis-auto">{t.footer.disclaimer}</span>
@@ -55,7 +56,7 @@ export default function Footer({ lang, t }: { lang: Locale; t: Dict }) {
             href="https://praibadvisors.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex w-fit items-center gap-4 rounded-full border border-line py-1.5 pl-4 pr-1.5 transition-colors hover:border-ink hover:bg-white/10"
+            className="group flex min-h-11 w-fit items-center gap-4 rounded-md border border-line py-1.5 pl-4 pr-1.5 transition-colors hover:border-ink hover:bg-white/10"
           >
             <span className="min-w-0">
               <span className="block text-[0.625rem] font-semibold uppercase tracking-[0.12em] text-ink-soft">{t.footer.partner}</span>
@@ -63,7 +64,7 @@ export default function Footer({ lang, t }: { lang: Locale; t: Dict }) {
             </span>
             <span
               aria-hidden
-              className="grid size-8 shrink-0 place-items-center rounded-full border border-ink text-ink transition-colors group-hover:bg-white group-hover:text-red-dk"
+              className="grid size-8 shrink-0 place-items-center rounded-md border border-ink text-ink transition-colors group-hover:bg-white group-hover:text-red-dk"
             >
               ↗
             </span>

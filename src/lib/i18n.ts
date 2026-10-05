@@ -8,6 +8,8 @@ export function hasLocale(value: string): value is Locale {
 
 /** Build a localised path: href("hi", "/about") -> "/hi/about" */
 export function href(lang: Locale, path = "/"): string {
+  // "/#section" is a section of the home page: /en#section
+  if (path.startsWith("/#")) return `/${lang}${path.slice(1)}`;
   const clean = path === "/" ? "" : path.startsWith("/") ? path : `/${path}`;
   return `/${lang}${clean}`;
 }

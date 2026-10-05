@@ -32,7 +32,7 @@ export function pageMetadata({
   const t = getDictionary(lang);
   const url = href(lang, path);
   const languages = Object.fromEntries(locales.map((l) => [htmlLang[l], href(l, path)]));
-  const ogImage = image ?? { ...OG_IMAGE, alt: `${t.person.name} — ${t.person.role}` };
+  const ogImage = image ?? { ...OG_IMAGE, alt: `${t.person.name}, ${t.person.role}` };
 
   return {
     title: absoluteTitle ? { absolute: title } : title,
@@ -56,7 +56,6 @@ export function pageMetadata({
       card: "summary_large_image",
       title,
       description,
-      creator: "@PandayRohit1227",
       images: [ogImage.url],
     },
   };
@@ -70,11 +69,11 @@ export function personJsonLd(lang: Locale) {
     "@context": "https://schema.org",
     "@type": "Person",
     "@id": `${SITE_URL}/#person`,
-    name: "Rohit Pandey",
-    alternateName: "रोहित पांडेय",
+    name: lang === "en" ? "Rohit Pandey" : "रोहित पाण्डेय",
+    alternateName: ["रोहित पाण्डेय", "Rohit Pandey"],
     url: abs(href(lang)),
     image: abs(images.hero.src),
-    jobTitle: lang === "en" ? "Advocate" : "अधिवक्ता",
+    jobTitle: t.person.role,
     description: t.meta.home.description,
     knowsLanguage: ["hi", "en"],
     alumniOf: { "@type": "CollegeOrUniversity", name: "University of Delhi" },

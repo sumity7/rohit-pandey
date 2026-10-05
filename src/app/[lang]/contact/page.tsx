@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import ContactForm from "@/components/ContactForm";
-import ContentSlot from "@/components/ContentSlot";
+import OfficeSection from "@/components/OfficeSection";
 import PageHeader from "@/components/PageHeader";
 import SocialLinks from "@/components/SocialLinks";
 import { resolveLang } from "@/lib/page";
@@ -19,32 +18,17 @@ export default async function ContactPage({ params }: PageProps<"/[lang]/contact
       <PageHeader
         lang={lang}
         trail={[{ name: t.nav.contact, path: "/contact" }]}
-        eyebrow={c.label}
         title={c.title}
+        intro={c.intro}
         titleSize="md"
       />
-      <div className="shell py-12 md:py-16">
-        <div className="grid overflow-hidden rounded-lg border border-line md:grid-cols-12">
-          {/* Left: direct channels on the flag gradient */}
-          <aside className="on-dark surface-gradient flag-wedge min-w-0 p-7 pb-24 [--wb-x:62%] [--wt-x:100%] [--wt-y:84%] md:col-span-5 md:p-10 md:pb-28">
-            <p className="lede text-ink">{c.intro}</p>
-            <p className="eyebrow mt-10">{c.channels}</p>
-            <SocialLinks variant="list" className="mt-5" />
-            <div className="mt-10">
-              <p className="font-display text-lg font-semibold">{t.person.name}</p>
-              <p className="text-sm text-ink-soft">{t.person.placeLong}</p>
-            </div>
-            <ContentSlot label={t.slot.label} className="mt-6">
-              {c.slot}
-            </ContentSlot>
-          </aside>
-
-          {/* Right: the form on white */}
-          <section aria-label={c.title} className="min-w-0 bg-white p-7 md:col-span-7 md:p-10">
-            <ContactForm t={c.form} />
-          </section>
-        </div>
-      </div>
+      <OfficeSection lang={lang} t={t} heading={false} />
+      <section aria-labelledby="follow-title" className="shell py-16 md:py-24">
+        <h2 id="follow-title" className="text-xl font-semibold">
+          {c.channels}
+        </h2>
+        <SocialLinks variant="list" className="mt-6 max-w-xl" />
+      </section>
     </>
   );
 }

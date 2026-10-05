@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import JsonLd from "@/components/JsonLd";
 import PageHeader from "@/components/PageHeader";
 import { getUpdate, updates } from "@/lib/content";
+import { formatDate, isoDate } from "@/lib/dates";
 import { href, htmlLang } from "@/lib/i18n";
 import { resolveLang } from "@/lib/page";
 import { abs, pageMetadata } from "@/lib/seo";
@@ -34,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: update.title[lang],
     description: update.summary[lang],
     type: "article",
-    publishedTime: update.published,
+    publishedTime: isoDate(update.date),
     image: update.image
       ? { url: update.image.src, width: update.image.width, height: update.image.height, alt: update.image.alt[lang] }
       : undefined,
@@ -51,8 +52,8 @@ export default async function UpdatePage({ params }: Props) {
     "@type": "Article",
     headline: update.title[lang],
     description: update.summary[lang],
-    datePublished: update.published,
-    dateModified: update.published,
+    datePublished: isoDate(update.date),
+    dateModified: isoDate(update.date),
     inLanguage: htmlLang[lang],
     mainEntityOfPage: url,
     url,
@@ -68,10 +69,10 @@ export default async function UpdatePage({ params }: Props) {
       <PageHeader
         lang={lang}
         trail={[
-          { name: t.nav.updates, path: "/updates" },
+          { name: t.nav.publicLife, path: "/public-life" },
           { name: update.title[lang], path: `/updates/${update.slug}` },
         ]}
-        eyebrow={`${update.period[lang]} · ${update.category[lang]}`}
+        eyebrow={[formatDate(update.date, lang), update.location?.[lang], update.category[lang]].filter(Boolean).join(" · ")}
         title={update.title[lang]}
         intro={update.summary[lang]}
         titleSize="md"
@@ -85,26 +86,7 @@ export default async function UpdatePage({ params }: Props) {
             ))}
           </div>
 
-          <aside className="mt-12 border-l-2 border-red pl-5 text-sm text-muted">
-            {/* The "photographs to follow" note only applies to notes without one */}
-            {!update.image && !update.video && (
-              <>
-                <p className="font-semibold text-ink-soft">{t.updates.noteLabel}</p>
-                <p className="mb-3 mt-1">{t.updates.note}</p>
-              </>
-            )}
-            <p className="text-xs">
-              {t.updates.published}:{" "}
-              <time dateTime={update.published}>
-                {new Intl.DateTimeFormat(htmlLang[lang], { dateStyle: "long" }).format(new Date(update.published))}
-              </time>
-            </p>
-          </aside>
-
-          <Link href={href(lang, "/updates")} className="link-draw mt-12">
-            <span aria-hidden className="inline-block rotate-180">
-              →
-            </span>
+          <Link href={href(lang, "/public-life")} className="link-draw mt-12 min-h-11 items-center">
             {t.updates.back}
           </Link>
         </div>
@@ -119,6 +101,7 @@ export default async function UpdatePage({ params }: Props) {
               width={update.video.width}
               height={update.video.height}
               aria-label={update.video.label[lang]}
+              style={{ backgroundImage: `url(${update.video.blur})`, backgroundSize: "cover" }}
               className="block h-auto w-full rounded-md bg-sand"
             >
               <source src={update.video.src} type="video/mp4" />
@@ -169,14 +152,14 @@ export default async function UpdatePage({ params }: Props) {
       {others.length > 0 && (
         <section aria-labelledby="more-updates" className="surface-tint">
           <div className="shell py-16 md:py-20">
-            <h2 id="more-updates" className="eyebrow">
+            <h2 id="more-updates" className="text-xl font-semibold">
               {t.updates.more}
             </h2>
             <ul className="mt-8 grid gap-4 md:grid-cols-2">
               {others.map((o) => (
                 <li key={o.slug}>
                   <Link href={href(lang, `/updates/${o.slug}`)} className="card-flip block h-full rounded-md border border-line p-6">
-                    <span className="text-sm font-semibold text-red">{o.period[lang]}</span>
+                    <span className="text-sm font-semibold text-red">{formatDate(o.date, lang)}</span>
                     <span className="mt-3 block font-display text-xl font-semibold leading-snug">
                       {o.title[lang]}
                     </span>

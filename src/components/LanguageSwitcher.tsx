@@ -27,10 +27,10 @@ export default function LanguageSwitcher({
         return (
           <span key={l} className="flex items-center">
             {i > 0 && (
-              <span aria-hidden className="mx-2 h-3.5 w-px bg-line" />
+              <span aria-hidden className="h-3.5 w-px bg-line" />
             )}
             {active ? (
-              <span aria-current="true" lang={labels[l].lang} className="font-semibold text-ink">
+              <span aria-current="true" lang={labels[l].lang} className="inline-flex min-h-11 min-w-11 items-center justify-center font-semibold text-ink">
                 {labels[l].short}
               </span>
             ) : (
@@ -38,7 +38,7 @@ export default function LanguageSwitcher({
                 href={switchLocalePath(pathname, l)}
                 hrefLang={labels[l].lang}
                 lang={labels[l].lang}
-                className="text-muted transition-colors hover:text-red"
+                className="inline-flex min-h-11 min-w-11 items-center justify-center text-muted transition-colors hover:text-red"
               >
                 {labels[l].short}
               </Link>
