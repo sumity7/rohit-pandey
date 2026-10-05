@@ -22,6 +22,7 @@ export default function PageHeader({
   aside,
   media,
   mediaSide = "right",
+  backdrop,
   tone = "deep",
   titleSize = "lg",
 }: {
@@ -34,6 +35,8 @@ export default function PageHeader({
   media?: React.ReactNode;
   /** Which side the media sits on from md up. On phones it always follows the title. */
   mediaSide?: "left" | "right";
+  /** A film that fills the whole header from md up (text sits on top of it). On phones it follows the text at its own 9:16 ratio. */
+  backdrop?: React.ReactNode;
   tone?: "deep" | "gradient";
   titleSize?: "xl" | "lg" | "md";
 }) {
@@ -50,12 +53,12 @@ export default function PageHeader({
 
   return (
     <header
-      className={`on-dark relative overflow-hidden ${tone === "gradient" ? "surface-gradient" : "surface-deep"} ${
+      className={`on-dark relative overflow-hidden ${tone === "gradient" ? "surface-gradient" : "surface-deep"} ${backdrop ? "md:min-h-[100svh]" : ""} ${
         media && mediaSide === "right" ? "flag-wedge [--wb-x:40%] [--wt-x:100%] [--wt-y:62%] md:[--wb-x:74%] md:[--wt-x:100%] md:[--wt-y:calc(var(--nav-h)+0.75rem)]" : ""
       }`}
     >
       <JsonLd data={breadcrumbJsonLd(lang, trail)} />
-      <div className="shell pt-[calc(var(--nav-h)+1.25rem)]">
+      <div className={`shell pt-[calc(var(--nav-h)+1.25rem)] ${backdrop ? "relative z-10" : ""}`}>
         <nav aria-label={t.nav.breadcrumb}>
           <ol className="flex flex-wrap items-center gap-2 text-sm text-muted">
             {crumbs.map((c, i) => {
@@ -95,7 +98,17 @@ export default function PageHeader({
           {!media && aside && <div className="pb-12 md:col-span-5 md:pb-16">{aside}</div>}
         </div>
       </div>
-      <div aria-hidden className="flag-strip" />
+      {backdrop && (
+        <div className="relative aspect-[9/16] w-full md:absolute md:inset-0 md:aspect-auto">
+          {backdrop}
+          {/* keeps the title and text readable over the film; the captions at the bottom stay clear */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-x-0 top-0 hidden h-3/4 bg-linear-to-b from-red-deep/90 via-red-deep/55 to-transparent md:block"
+          />
+        </div>
+      )}
+      <div aria-hidden className={`flag-strip ${backdrop ? "relative z-10 md:absolute md:inset-x-0 md:bottom-0" : ""}`} />
     </header>
   );
 }

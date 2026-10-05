@@ -8,9 +8,10 @@ import { href, type Locale } from "@/lib/i18n";
  * Every breakpoint keeps the same reading: identity on the LEFT, beside the
  * portrait on the RIGHT.
  *
- * - xl and up: the desktop artwork fills the hero below the navbar; all the
- *   text sits in its dark left third. Height follows the artwork's 820:312
- *   ratio, so it is never zoomed beyond what the composition allows.
+ * - xl and up: the artwork fills the hero below the navbar; all the
+ *   text sits in its dark left third. The hero is at least as tall as the
+ *   screen (up to 90rem), so no white shows under it on a first view; the
+ *   artwork covers the area and keeps the portrait on the right edge.
  * - below xl: the artwork stands at the bottom of the stage at its own ratio
  *   (phones: mobile artwork 16:9, tablets: desktop artwork), never cropped.
  *   Eyebrow, name, designation and the Khalilabad line run down the left
@@ -52,18 +53,18 @@ export default function Hero({ lang, t }: { lang: Locale; t: Dict }) {
             stage at its own ratio; from xl it fills the hero below the navbar. */}
         <div
           aria-hidden
-          className="absolute inset-x-0 bottom-0 aspect-video md:aspect-[820/312] xl:top-[var(--nav-h)] xl:aspect-auto"
+          className="absolute inset-x-0 bottom-0 aspect-video md:aspect-[1792/1000] xl:top-[var(--nav-h)] xl:aspect-auto"
         >
           <picture>
-            <source media="(min-width: 768px)" srcSet="/images/rohit-pandey-hero-desktop.jpg" />
+            <source media="(min-width: 768px)" srcSet="/images/rohit-pandey-hero-banner.jpg" />
             <img
-              src="/images/rohit-pandey-hero-mobile.jpg"
+              src="/images/rohit-pandey-hero-banner-mobile.jpg"
               alt=""
-              width={1280}
-              height={720}
+              width={1100}
+              height={614}
               fetchPriority="high"
               decoding="async"
-              className="size-full object-cover object-center xl:object-right"
+              className="size-full object-cover object-right xl:object-[right_25%]"
             />
           </picture>
           {/* blend the artwork's top edge into the deep red above it */}
@@ -72,11 +73,11 @@ export default function Hero({ lang, t }: { lang: Locale; t: Dict }) {
           <div className="absolute inset-y-0 left-0 w-[64%] bg-linear-to-r from-red-deep via-red-deep/75 to-transparent md:w-[56%] xl:hidden" />
           {/* settle the base into the section */}
           <div className="absolute inset-x-0 bottom-0 h-8 bg-linear-to-b from-transparent to-red-deep xl:hidden" />
-          {/* a light scrim deepens the artwork's own dark left side for the text */}
-          <div className="absolute inset-y-0 left-0 hidden w-3/5 bg-linear-to-r from-[rgb(70_4_4/0.45)] to-transparent xl:block" />
+          {/* a scrim over the flags and crowd on the left keeps the text readable */}
+          <div className="absolute inset-y-0 left-0 hidden w-[62%] bg-linear-to-r from-red-deep/90 via-red-deep/55 to-transparent xl:block" />
         </div>
 
-        <div className="shell relative flex min-h-[calc(var(--nav-h)+56.25vw+1.5rem)] items-start pb-6 pt-[calc(var(--nav-h)+1.25rem)] md:min-h-[calc(var(--nav-h)+38.05vw+2rem)] xl:min-h-[max(40.5rem,calc(100vw/2.628+var(--nav-h)))] xl:items-center xl:pb-16 xl:pt-[calc(var(--nav-h)+1rem)]">
+        <div className="shell relative flex min-h-[calc(var(--nav-h)+56.25vw+1.5rem)] items-start pb-6 pt-[calc(var(--nav-h)+1.25rem)] md:min-h-[calc(var(--nav-h)+55.8vw+2rem)] xl:min-h-[max(40.5rem,min(calc(100svh-5px),90rem))] xl:items-center xl:pb-16 xl:pt-[calc(var(--nav-h)+1rem)]">
           <div className="anim-rise w-full xl:w-auto xl:max-w-[min(36vw,34rem)]">
             <p className="flex items-start gap-2.5 text-[0.75rem] font-semibold uppercase leading-snug tracking-[0.1em] text-ink-soft before:mt-[0.6em] before:h-0.5 before:w-5 before:shrink-0 before:bg-white/80 before:content-[''] sm:text-[0.8125rem] sm:tracking-[0.12em] xl:gap-3 xl:text-xs xl:tracking-[0.16em] xl:before:w-7 [&:lang(hi)]:text-[0.875rem] [&:lang(hi)]:normal-case">
               {hero.eyebrow}

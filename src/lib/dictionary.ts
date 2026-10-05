@@ -167,6 +167,7 @@ const en = {
     title: "Meetings, visits and party work",
     intro: "Across Khalilabad and Sant Kabir Nagar, newest first.",
     photoAlt: "Rohit Pandey in a white kurta with an angavastram",
+    videoLabel: "Rohit Pandey meeting people face to face in Sant Kabir Nagar",
     more: "All updates",
   },
   socialService: {
@@ -174,9 +175,6 @@ const en = {
     title: "Social service in Khalilabad",
     lead: "The issues residents raise most often at the office and in village meetings, and the work done on the ground.",
     seeAll: "See all updates",
-    statTotal: "Updates since March 2026",
-    statPeople: "Village and public meetings",
-    statLatest: "Latest update",
     issuesTitle: "Issues he is working on",
     workTitle: "Recent work on the ground",
     countOne: "update",
@@ -330,10 +328,7 @@ const en = {
     language: "Language",
     privacy: "Privacy",
     terms: "Terms",
-    partner: "Digital Experience Partner",
     newTab: "opens in a new tab",
-    disclaimer:
-      "Personal website of Rohit Pandey. Not an official website of the Samajwadi Party.",
   },
   legal: {
     updated: "Last updated: 2 October 2026",
@@ -543,6 +538,7 @@ const hi: Dict = {
     title: "बैठकें, दौरे और पार्टी का काम",
     intro: "खलीलाबाद और संत कबीर नगर में, सबसे नया सबसे ऊपर।",
     photoAlt: "सफ़ेद कुर्ता और अंगवस्त्र में रोहित पाण्डेय",
+    videoLabel: "संत कबीर नगर में लोगों से आमने-सामने मिलते रोहित पाण्डेय",
     more: "सभी अपडेट",
   },
   socialService: {
@@ -550,9 +546,6 @@ const hi: Dict = {
     title: "खलीलाबाद में समाज सेवा",
     lead: "वे मुद्दे जो लोग कार्यालय और गाँव की बैठकों में सबसे ज़्यादा उठाते हैं, और ज़मीन पर हुआ काम।",
     seeAll: "सभी अपडेट देखें",
-    statTotal: "मार्च 2026 से अपडेट",
-    statPeople: "गाँव और जन बैठकें",
-    statLatest: "नवीनतम अपडेट",
     issuesTitle: "किन मुद्दों पर काम कर रहे हैं",
     workTitle: "ज़मीन पर हाल का काम",
     countOne: "अपडेट",
@@ -706,10 +699,7 @@ const hi: Dict = {
     language: "भाषा",
     privacy: "गोपनीयता",
     terms: "शर्तें",
-    partner: "डिजिटल अनुभव सहयोगी",
     newTab: "नए टैब में खुलता है",
-    disclaimer:
-      "रोहित पाण्डेय की व्यक्तिगत वेबसाइट। यह समाजवादी पार्टी की आधिकारिक वेबसाइट नहीं है।",
   },
   legal: {
     updated: "अंतिम अद्यतन: 2 अक्टूबर 2026",

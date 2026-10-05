@@ -12,7 +12,7 @@ import SocialServiceBoard, { type ExtraPhoto } from "./SocialServiceBoard";
  */
 export default function SocialService({ lang, t, heading = true }: { lang: Locale; t: Dict; heading?: boolean }) {
   const s = t.socialService;
-  const { items, issues, stats } = getSocialService(lang);
+  const { items, issues } = getSocialService(lang);
 
   // Under the featured story: its other photographs, then the campaign graphic
   const featuredGallery = getUpdate(items[0]?.slug ?? "")?.gallery ?? [];
@@ -24,12 +24,6 @@ export default function SocialService({ lang, t, heading = true }: { lang: Local
       height: campaignGraphic.height,
       alt: t.media.items["campaign-graphic"].alt,
     },
-  ];
-
-  const cells = [
-    { value: String(stats.total), label: s.statTotal },
-    { value: String(stats.people), label: s.statPeople },
-    { value: stats.latestDay, label: s.statLatest },
   ];
 
   return (
@@ -58,16 +52,6 @@ export default function SocialService({ lang, t, heading = true }: { lang: Local
             {s.title}
           </h2>
         )}
-
-        {/* B. Stats */}
-        <dl className={`${heading ? "mt-8 md:mt-12" : ""} grid grid-cols-3 divide-x divide-line rounded-md border border-line bg-paper`}>
-          {cells.map((c) => (
-            <div key={c.label} className="flex flex-col-reverse justify-end p-4 md:p-6">
-              <dt className="mt-2 text-[13px] leading-snug text-muted md:text-[15px]">{c.label}</dt>
-              <dd className="font-display text-[24px] font-semibold leading-none md:text-[34px] [&:lang(hi)]:leading-[1.3]">{c.value}</dd>
-            </div>
-          ))}
-        </dl>
 
         <SocialServiceBoard
           issues={issues}

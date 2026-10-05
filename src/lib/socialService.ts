@@ -42,8 +42,6 @@ export type ServiceItem = {
 
 export type ServiceIssue = { id: string; icon: string; title: string; text: string; count: number };
 
-export type ServiceStats = { total: number; people: number; latestDay: string };
-
 /** Slugs of every story the Social service section lists, so the home page can skip them elsewhere. */
 export const socialServiceSlugs = rawActivity.map((a) => a.slug);
 
@@ -77,15 +75,5 @@ export function getSocialService(lang: Locale) {
     count: rawActivity.filter((a) => a.issues.includes(i.id)).length,
   }));
 
-  // Every figure is worked out from the activity list, never typed in
-  const newest = sorted[0];
-  const [y, m, d] = newest.date.split("-");
-  const latestDay = formatDate(d ? `${y}-${m}-${d}` : `${y}-${m}`, lang).replace(/\s?\d{4}$/, "");
-  const stats: ServiceStats = {
-    total: rawActivity.length,
-    people: rawActivity.filter((a) => a.category === "people").length,
-    latestDay,
-  };
-
-  return { items, issues, stats };
+  return { items, issues };
 }
