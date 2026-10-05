@@ -1,26 +1,446 @@
 @import "tailwindcss";
 
+/* ------------------------------------------------------------------ */
+/*  Palette — Samajwadi Party flag colours only                        */
+/* ------------------------------------------------------------------ */
+
+/* Raw brand values. Everything else derives from these.
+   Contrast notes (WCAG AA):
+   - white on --red 4.7:1, on --red-dk 8.6:1, on --red-deep 13:1
+   - white on --green 3.4:1 → never small text on --green; use it for
+     large headings, icons, lines and borders only. Green text or green
+     buttons use --green-dk (7.6:1). */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --red: #e0262f;
+  --red-dk: #9e1018;
+  --red-deep: #6e0b12;
+  --green: #12a150;
+  --green-dk: #07602e;
+  --green-deep: #06502a;
+  --white: #ffffff;
+  --tint: #f3f8f4;
+  --text: #16181c;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  /* Surfaces */
+  --color-ivory: var(--white);
+  --color-paper: var(--white);
+  --color-tint: var(--tint);
+  --color-sand: var(--tint);
+  --color-sand-deep: color-mix(in oklab, var(--green) 18%, var(--white));
+
+  /* Text and lines */
+  --color-ink: var(--text);
+  --color-ink-soft: color-mix(in oklab, var(--text) 82%, var(--white));
+  --color-muted: color-mix(in oklab, var(--text) 66%, var(--white));
+  --color-line: color-mix(in oklab, var(--text) 13%, transparent);
+
+  /* Brand */
+  --color-red: var(--red);
+  --color-red-dk: var(--red-dk);
+  --color-red-deep: var(--red-deep);
+  --color-red-tint: color-mix(in oklab, var(--red) 9%, var(--white));
+  --color-green: var(--green);
+  --color-green-dk: var(--green-dk);
+  --color-green-deep: var(--green-deep);
+  /* Fixed white for things that must stay white inside remapped scopes */
+  --color-white: var(--white);
+  --color-brand-red: var(--red);
+
+  --font-sans: var(--font-italiana), var(--font-noto-deva), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-italiana), var(--font-anek), ui-sans-serif, system-ui, sans-serif;
+
+  --ease-out-soft: cubic-bezier(0.2, 0.7, 0.1, 1);
+  --breakpoint-xs: 25rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --gutter: clamp(1rem, 4vw, 3rem);
+  --nav-h: 4.5rem;
+  color-scheme: light;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Surfaces                                                           */
+/* ------------------------------------------------------------------ */
+
+@layer components {
+  /* Dark scope: inside it the theme tokens flip to white-on-colour, so shared
+     components (eyebrows, links, buttons, lines) need no per-use overrides.
+     bg-ink + text-paper buttons become white buttons with red text. */
+  .on-dark {
+    --color-ink: var(--white);
+    --color-ink-soft: rgb(255 255 255 / 0.88);
+    --color-muted: rgb(255 255 255 / 0.72);
+    --color-line: rgb(255 255 255 / 0.22);
+    --color-red: var(--white);
+    --color-red-tint: rgb(255 255 255 / 0.1);
+    --color-paper: var(--red-dk);
+    --color-sand: rgb(255 255 255 / 0.08);
+    --color-sand-deep: rgb(255 255 255 / 0.3);
+    color: var(--color-ink);
+  }
+
+  /* Flag surfaces. Red and green are never blended into each other (that
+     mixes to a muddy brown). Red fields stay red; `.flag-wedge` adds a crisp
+     green wedge, edged in white, placed per use so it only ever sits behind
+     a portrait or in an empty corner — never under text or the navbar. */
+  .surface-hero {
+    background:
+      radial-gradient(70% 90% at 0% 0%, rgb(255 255 255 / 0.1), transparent 60%),
+      linear-gradient(160deg, var(--red) 0%, var(--red-dk) 100%);
+  }
+  .surface-deep {
+    background-color: var(--red-deep);
+  }
+  .surface-gradient {
+    background: linear-gradient(160deg, var(--red-dk) 0%, var(--red-deep) 100%);
+  }
+
+  /* --wt-x/--wt-y: where the wedge meets the top-right; --wb-x: where it
+     meets the bottom edge. */
+  .flag-wedge {
+    position: relative;
+    isolation: isolate;
+    --wt-x: 96%;
+    --wt-y: 0%;
+    --wb-x: 66%;
+  }
+  .flag-wedge::before,
+  .flag-wedge::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+  }
+  .flag-wedge::before {
+    background: rgb(255 255 255 / 0.85);
+    clip-path: polygon(calc(var(--wt-x) - 3px) var(--wt-y), 100% var(--wt-y), 100% 100%, calc(var(--wb-x) - 3px) 100%);
+  }
+  .flag-wedge::after {
+    background: var(--green-dk);
+    clip-path: polygon(var(--wt-x) var(--wt-y), 100% var(--wt-y), 100% 100%, var(--wb-x) 100%);
+  }
+  .surface-tint {
+    background-color: var(--tint);
+  }
+
+  /* 5px flag strip: red | green */
+  .flag-strip {
+    height: 5px;
+    background: linear-gradient(90deg, var(--red) 0 50%, var(--green) 50% 100%);
+  }
+
+  .explorer-panel {
+    animation: explorer-in 0.35s var(--ease-out-soft);
+  }
+  @keyframes explorer-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .explorer-panel {
+      animation: none;
+    }
+  }
+
+  /* Cards that turn into the flag gradient on hover / keyboard focus */
+  .card-flip {
+    background-color: var(--white);
+    transition:
+      background-color 0.35s var(--ease-out-soft),
+      color 0.35s var(--ease-out-soft),
+      border-color 0.35s var(--ease-out-soft);
+  }
+  .card-flip:hover,
+  .card-flip:focus-within {
+    --color-ink: var(--white);
+    --color-ink-soft: rgb(255 255 255 / 0.88);
+    --color-muted: rgb(255 255 255 / 0.75);
+    --color-line: rgb(255 255 255 / 0.25);
+    --color-red: var(--white);
+    border-color: transparent;
+    color: var(--white);
+    background-color: var(--red-deep);
+    box-shadow: inset 0 -4px 0 var(--green);
+  }
+
+  /* Portrait frame: a light studio arch for every cutout. On coloured
+     surfaces it keeps the cutout's edges against the light ground it was
+     made for, so photographs never read as pasted PNGs. */
+  .portrait-frame {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border-radius: 999px 999px 0.5rem 0.5rem;
+    background:
+      radial-gradient(55% 40% at 50% 36%, rgb(224 38 47 / 0.13), transparent 72%),
+      linear-gradient(to bottom, var(--white) 0%, var(--tint) 58%, color-mix(in oklab, var(--green) 16%, var(--white)) 100%);
+    box-shadow:
+      0 0 0 1px rgb(22 24 28 / 0.06),
+      0 34px 60px -38px rgb(22 24 28 / 0.55);
+  }
+  /* contact shadow where the figure meets the frame */
+  .portrait-frame::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: auto 10% -4% 10%;
+    height: 22%;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, rgb(22 24 28 / 0.2), transparent);
+    filter: blur(8px);
+  }
+  /* flag line along the base */
+  .portrait-frame::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--red) 0 50%, var(--green) 50% 100%);
+  }
+  .portrait-frame[data-flush] {
+    border-radius: 999px 999px 0 0;
+  }
+  .portrait-frame[data-flush]::after {
+    display: none;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/*  Base                                                               */
+/* ------------------------------------------------------------------ */
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  scroll-padding-top: calc(var(--nav-h) + 1rem);
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--white);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Never break words mid-way — Devanagari conjuncts especially. */
+h1, h2, h3, h4, p, li, dd, dt, figcaption, blockquote, a, span, label {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: manual;
+}
+
+h1, h2, h3 {
+  text-wrap: balance;
+}
+
+p, li, dd, figcaption {
+  text-wrap: pretty;
+}
+
+/* Hindi: taller lines for matras */
+:lang(hi) body {
+  line-height: 1.8;
+  font-size: 1.075rem;
+}
+
+/* Positive letter-spacing (small-caps labels) breaks Devanagari shaping */
+:lang(hi) [class*="tracking-[0."] {
+  letter-spacing: 0 !important;
+  text-transform: none;
+}
+
+::selection {
+  background: var(--red);
+  color: var(--white);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-red);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Type                                                               */
+/* ------------------------------------------------------------------ */
+
+@utility font-display {
+  font-family: var(--font-display);
+  font-variation-settings: "wdth" 88;
+  letter-spacing: -0.025em;
+}
+
+@utility eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  &::before {
+    content: "";
+    width: 1.75rem;
+    height: 2px;
+    background: var(--color-red);
+  }
+  &:lang(hi) {
+    letter-spacing: 0.02em;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+}
+
+/* Section titles: confident but never poster-sized */
+@utility title-lg {
+  font-family: var(--font-display);
+  font-variation-settings: "wdth" 88;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  font-size: clamp(2rem, 1.35rem + 2.6vw, 3.5rem);
+  line-height: 1.04;
+  &:lang(hi) {
+    letter-spacing: 0;
+    line-height: 1.3;
+    font-size: clamp(1.75rem, 1.2rem + 2.2vw, 3rem);
+  }
+}
+
+@utility title-md {
+  font-family: var(--font-display);
+  font-variation-settings: "wdth" 90;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-size: clamp(1.375rem, 1.1rem + 1.2vw, 2rem);
+  line-height: 1.15;
+  &:lang(hi) {
+    letter-spacing: 0;
+    line-height: 1.45;
+    font-size: clamp(1.25rem, 1.05rem + 1vw, 1.75rem);
+  }
+}
+
+@utility lede {
+  font-size: clamp(1.0625rem, 0.98rem + 0.4vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--color-ink-soft);
+  &:lang(hi) {
+    line-height: 1.85;
+  }
+}
+
+@utility shell {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* Underlined text link with a drawn rule */
+@utility link-draw {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  padding-block: 0.35rem;
+  background-image: linear-gradient(var(--color-red), var(--color-red));
+  background-size: 0% 2px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.45s var(--ease-out-soft), color 0.2s;
+  &:hover {
+    background-size: 100% 2px;
+  }
+}
+
+/* Primary and secondary buttons */
+@utility btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-radius: 999px;
+  padding: 0.8rem 1.15rem 0.8rem 1.35rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.2;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Motion — kept to a quiet entrance on the hero                      */
+/* ------------------------------------------------------------------ */
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .anim-rise {
+    animation: rise 0.9s var(--ease-out-soft) both;
+  }
+  .anim-rise-late {
+    animation: rise 1.1s var(--ease-out-soft) 0.15s both;
+  }
+}
+
+/* Image hover — gentle drift */
+.img-hover img {
+  transition: transform 0.9s var(--ease-out-soft);
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .img-hover:hover img {
+    transform: scale(1.03);
+  }
+}
+
+/* Native dialog used by the media lightbox */
+dialog.lightbox {
+  max-width: 100vw;
+  max-height: 100dvh;
+  width: 100vw;
+  height: 100dvh;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: color-mix(in oklab, var(--red-deep) 96%, transparent);
+}
+dialog.lightbox::backdrop {
+  background: rgb(22 24 28 / 0.4);
+}
+@media (prefers-reduced-motion: no-preference) {
+  dialog.lightbox[open] {
+    animation: fade 0.3s ease both;
+  }
 }

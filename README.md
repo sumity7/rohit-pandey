@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rohit Pandey — website
 
-## Getting Started
+Bilingual (English `/en`, Hindi `/hi`) personal website for Rohit Pandey, Advocate & Social-Political Worker, Khalilabad, Sant Kabir Nagar.
 
-First, run the development server:
+Next.js 16 (App Router) · TypeScript · Tailwind CSS v4. All pages are statically generated; only `/api/contact` runs on the server.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000 → redirects to /en
+npm run build && npm start
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Variable | Purpose |
+| --- | --- |
+| `NEXT_PUBLIC_SITE_URL` | Production domain, used for canonical URLs, sitemap, Open Graph and JSON-LD. **Defaults to `https://www.rohitpandey.in` — confirm before launch.** |
+| `CONTACT_WEBHOOK_URL` | Where contact-form submissions are POSTed as JSON (form service, Slack/Teams webhook, CRM). Without it, production shows the form's error state rather than silently dropping messages. In development, messages are logged to the console. |
+| `NEXT_PUBLIC_SHOW_CONTENT_SLOTS` | Set to `false` to hide the dashed "Content slot" placeholders once the client has supplied the missing material. |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Where things live
 
-## Learn More
+- `src/lib/dictionary.ts` — all copy, English and Hindi.
+- `src/lib/content.ts` — image registry, gallery order, updates (articles).
+- `src/lib/site.ts` — social links, coordinates, site URL.
+- `public/images/` — optimised WebP files made from the client's originals (cutouts: background removed only, people unaltered).
+- `public/og/rohit-pandey.jpg` — Open Graph image.
 
-To learn more about Next.js, take a look at the following resources:
+### Adding an update
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Add an entry to `updates` in `src/lib/content.ts` with English and Hindi fields. The page, sitemap entry and Article JSON-LD are generated automatically.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Content still needed from the client
 
-## Deploy on Vercel
+Marked on the site as content slots:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Legal career: courts, areas of practice, years at the bar.
+- Degree and year at the University of Delhi.
+- Details of earlier public and electoral work. The 2014 Lok Sabha contest is intentionally **not** stated until confirmed.
+- Dates and places for the party-office meeting, the Sant Kabir Nagar visit, and the public-life portraits.
+- Local priorities for Khalilabad, in his own words.
+- Office address, phone and email.
+- Spelling preference for the Hindi name (currently रोहित पांडेय).
