@@ -28,7 +28,6 @@ export default function Hero({ lang, t }: { lang: Locale; t: Dict }) {
     <>
       <span aria-hidden className="block h-[3px] w-14 bg-white/80" />
       <p className="mt-6 max-w-[34rem] text-[1.0625rem] leading-relaxed text-ink-soft">{hero.intro}</p>
-      <p className="mt-2 max-w-[34rem] text-base text-muted xl:text-[0.9375rem]">{hero.joined}</p>
       <div className="mt-8 flex flex-col gap-3 xs:flex-row xs:flex-wrap xs:items-center">
         <Link
           href={href(lang, "/about")}

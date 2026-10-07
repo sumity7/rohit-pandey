@@ -16,6 +16,12 @@ const nextConfig: NextConfig = {
       { source: "/:lang(en|hi)/updates", destination: "/:lang/public-life", permanent: true },
       // The journey now lives on the about page
       { source: "/:lang(en|hi)/journey", destination: "/:lang/about#journey", permanent: true },
+      // The Akhilesh Yadav update no longer refers to joining the party
+      {
+        source: "/:lang(en|hi)/updates/joins-samajwadi-party",
+        destination: "/:lang/updates/with-akhilesh-yadav",
+        permanent: true,
+      },
     ];
   },
 };

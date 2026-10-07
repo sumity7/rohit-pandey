@@ -11,7 +11,8 @@ const en = {
     name: "Rohit Pandey",
     first: "Rohit",
     last: "Pandey",
-    role: "Samajwadi Party Leader",
+    // U+2060 (word joiner) keeps the hyphenated word on one line.
+    role: "Advocate & Social-⁠Political Worker",
     roleLine: "Samajwadi Party | Khalilabad",
     place: "Khalilabad • Sant Kabir Nagar",
     placeLong: "Khalilabad, Sant Kabir Nagar, Uttar Pradesh",
@@ -19,14 +20,14 @@ const en = {
   },
   meta: {
     home: {
-      title: "Rohit Pandey | Samajwadi Party Leader, Khalilabad",
+      title: "Rohit Pandey | Samajwadi Party, Khalilabad",
       description:
-        "Rohit Pandey, Samajwadi Party leader in Khalilabad (Assembly Constituency No. 313), Sant Kabir Nagar, Uttar Pradesh. With the party since March 2026.",
+        "Rohit Pandey works for the Samajwadi Party in Khalilabad (Assembly Constituency No. 313), Sant Kabir Nagar, Uttar Pradesh.",
     },
     about: {
       title: "About Rohit Pandey",
       description:
-        "Rohit Pandey is a Samajwadi Party leader in Khalilabad, Sant Kabir Nagar, and a former Lok Sabha candidate. He joined the party in March 2026.",
+        "Rohit Pandey is an advocate and former Lok Sabha candidate who works for the Samajwadi Party in Khalilabad, Sant Kabir Nagar.",
     },
     socialService: {
       title: "Social Service in Khalilabad",
@@ -86,7 +87,6 @@ const en = {
     eyebrow: "Samajwadi Party · Khalilabad, Sant Kabir Nagar",
     line: "At work in Khalilabad, Assembly Constituency No. 313.",
     intro: "Based in Khalilabad, the district headquarters of Sant Kabir Nagar.",
-    joined: "He joined the Samajwadi Party in March 2026.",
     ctaProfile: "About Rohit Pandey",
     ctaContact: "Contact the Office",
     party: "Samajwadi Party",
@@ -94,13 +94,13 @@ const en = {
   },
   about: {
     label: "About",
-    title: "A leader from Khalilabad",
+    title: "Working for Khalilabad",
     bio: [
-      "Rohit Pandey is a Samajwadi Party leader working in the Khalilabad assembly area (No. 313) of Sant Kabir Nagar district, Uttar Pradesh.",
-      "A former Lok Sabha candidate from Sant Kabir Nagar, he joined the Samajwadi Party in March 2026. He is an advocate by profession and studied at the University of Delhi.",
+      "Rohit Pandey works for the Samajwadi Party in the Khalilabad assembly area (No. 313) of Sant Kabir Nagar district, Uttar Pradesh.",
+      "A former Lok Sabha candidate from Sant Kabir Nagar, he is an advocate by profession and studied at the University of Delhi.",
     ],
     facts: [
-      { k: "Party", v: "Samajwadi Party, since March 2026" },
+      { k: "Party", v: "Samajwadi Party" },
       { k: "Based in", v: "Khalilabad, Sant Kabir Nagar" },
       { k: "Languages", v: "Hindi, English" },
       { k: "Education", v: "University of Delhi" },
@@ -121,9 +121,9 @@ const en = {
     items: [
       {
         id: "joining",
-        era: "March 2026",
-        title: "Joins the Samajwadi Party",
-        body: "In March 2026 he joined the Samajwadi Party, led by national president Akhilesh Yadav, and has worked with the party since.",
+        era: "Samajwadi Party",
+        title: "With the Samajwadi Party",
+        body: "He works with the Samajwadi Party, whose national president is Shri Akhilesh Yadav ji.",
         alt: "Rohit Pandey greeting Samajwadi Party national president Akhilesh Yadav",
         caption: "With Samajwadi Party national president Akhilesh Yadav.",
       },
@@ -131,7 +131,7 @@ const en = {
         id: "visit",
         era: "2026",
         title: "Welcomed in Sant Kabir Nagar",
-        body: "After joining the party he visited Sant Kabir Nagar, where party workers gathered to welcome him.",
+        body: "He visited Sant Kabir Nagar, where Samajwadi Party workers gathered to welcome him.",
       },
       {
         id: "organisation",
@@ -150,7 +150,7 @@ const en = {
       "Khalilabad is the headquarters of Sant Kabir Nagar district. Its assembly constituency is one of five that make up the Sant Kabir Nagar Lok Sabha seat.",
     connectionLabel: "Local connection",
     connection:
-      "Rohit Pandey is based in Khalilabad. Since joining the Samajwadi Party, his political work has been focused on this assembly area.",
+      "Rohit Pandey is based in Khalilabad, and his work with the Samajwadi Party is focused on this assembly area.",
     facts: [
       { k: "Assembly constituency", v: "No. 313 · Khalilabad" },
       { k: "District", v: "Sant Kabir Nagar" },
@@ -418,7 +418,7 @@ const hi: Dict = {
     name: "रोहित पाण्डेय",
     first: "रोहित",
     last: "पाण्डेय",
-    role: "समाजवादी पार्टी के नेता",
+    role: "अधिवक्ता एवं सामाजिक-⁠राजनीतिक कार्यकर्ता",
     roleLine: "समाजवादी पार्टी | खलीलाबाद",
     place: "खलीलाबाद • संत कबीर नगर",
     placeLong: "खलीलाबाद, संत कबीर नगर, उत्तर प्रदेश",
@@ -426,14 +426,14 @@ const hi: Dict = {
   },
   meta: {
     home: {
-      title: "रोहित पाण्डेय | समाजवादी पार्टी के नेता, खलीलाबाद",
+      title: "रोहित पाण्डेय | समाजवादी पार्टी, खलीलाबाद",
       description:
-        "रोहित पाण्डेय, खलीलाबाद (विधानसभा क्षेत्र संख्या 313), संत कबीर नगर, उत्तर प्रदेश में समाजवादी पार्टी के नेता। मार्च 2026 से पार्टी के साथ।",
+        "रोहित पाण्डेय खलीलाबाद (विधानसभा क्षेत्र संख्या 313), संत कबीर नगर, उत्तर प्रदेश में समाजवादी पार्टी के लिए काम करते हैं।",
     },
     about: {
       title: "रोहित पाण्डेय का परिचय",
       description:
-        "रोहित पाण्डेय खलीलाबाद, संत कबीर नगर में समाजवादी पार्टी के नेता और पूर्व लोकसभा प्रत्याशी हैं। मार्च 2026 में वे पार्टी में शामिल हुए।",
+        "रोहित पाण्डेय अधिवक्ता और पूर्व लोकसभा प्रत्याशी हैं, जो खलीलाबाद, संत कबीर नगर में समाजवादी पार्टी के लिए काम करते हैं।",
     },
     socialService: {
       title: "खलीलाबाद में समाज सेवा",
@@ -493,7 +493,6 @@ const hi: Dict = {
     eyebrow: "समाजवादी पार्टी · खलीलाबाद, संत कबीर नगर",
     line: "खलीलाबाद, विधानसभा क्षेत्र संख्या 313 में सक्रिय।",
     intro: "संत कबीर नगर ज़िले के मुख्यालय खलीलाबाद में रहते हैं।",
-    joined: "मार्च 2026 में समाजवादी पार्टी में शामिल हुए।",
     ctaProfile: "रोहित पाण्डेय के बारे में",
     ctaContact: "कार्यालय से संपर्क करें",
     party: "समाजवादी पार्टी",
@@ -501,13 +500,13 @@ const hi: Dict = {
   },
   about: {
     label: "परिचय",
-    title: "खलीलाबाद के नेता",
+    title: "खलीलाबाद के लिए कार्यरत",
     bio: [
-      "रोहित पाण्डेय समाजवादी पार्टी के नेता हैं और उत्तर प्रदेश के संत कबीर नगर ज़िले के खलीलाबाद विधानसभा क्षेत्र (संख्या 313) में काम कर रहे हैं।",
-      "संत कबीर नगर से पूर्व लोकसभा प्रत्याशी रह चुके रोहित पाण्डेय मार्च 2026 में समाजवादी पार्टी में शामिल हुए। वे पेशे से अधिवक्ता हैं और उन्होंने दिल्ली विश्वविद्यालय से पढ़ाई की है।",
+      "रोहित पाण्डेय उत्तर प्रदेश के संत कबीर नगर ज़िले के खलीलाबाद विधानसभा क्षेत्र (संख्या 313) में समाजवादी पार्टी के लिए काम कर रहे हैं।",
+      "संत कबीर नगर से पूर्व लोकसभा प्रत्याशी रह चुके रोहित पाण्डेय पेशे से अधिवक्ता हैं और उन्होंने दिल्ली विश्वविद्यालय से पढ़ाई की है।",
     ],
     facts: [
-      { k: "दल", v: "समाजवादी पार्टी, मार्च 2026 से" },
+      { k: "दल", v: "समाजवादी पार्टी" },
       { k: "कार्यक्षेत्र", v: "खलीलाबाद, संत कबीर नगर" },
       { k: "भाषाएँ", v: "हिंदी, अंग्रेज़ी" },
       { k: "शिक्षा", v: "दिल्ली विश्वविद्यालय" },
@@ -528,9 +527,9 @@ const hi: Dict = {
     items: [
       {
         id: "joining",
-        era: "मार्च 2026",
-        title: "समाजवादी पार्टी में शामिल",
-        body: "मार्च 2026 में वे राष्ट्रीय अध्यक्ष अखिलेश यादव के नेतृत्व वाली समाजवादी पार्टी में शामिल हुए और तब से पार्टी के साथ काम कर रहे हैं।",
+        era: "समाजवादी पार्टी",
+        title: "समाजवादी पार्टी के साथ",
+        body: "वे समाजवादी पार्टी के साथ काम करते हैं, जिसके राष्ट्रीय अध्यक्ष श्री अखिलेश यादव जी हैं।",
         alt: "समाजवादी पार्टी के राष्ट्रीय अध्यक्ष अखिलेश यादव से भेंट करते रोहित पाण्डेय",
         caption: "समाजवादी पार्टी के राष्ट्रीय अध्यक्ष अखिलेश यादव के साथ।",
       },
@@ -538,7 +537,7 @@ const hi: Dict = {
         id: "visit",
         era: "2026",
         title: "संत कबीर नगर में स्वागत",
-        body: "पार्टी में शामिल होने के बाद वे संत कबीर नगर पहुँचे, जहाँ पार्टी कार्यकर्ताओं ने एकत्र होकर उनका स्वागत किया।",
+        body: "वे संत कबीर नगर पहुँचे, जहाँ समाजवादी पार्टी के कार्यकर्ताओं ने एकत्र होकर उनका स्वागत किया।",
       },
       {
         id: "organisation",
@@ -557,7 +556,7 @@ const hi: Dict = {
       "खलीलाबाद संत कबीर नगर ज़िले का मुख्यालय है। यहाँ का विधानसभा क्षेत्र संत कबीर नगर लोकसभा सीट के पाँच विधानसभा क्षेत्रों में से एक है।",
     connectionLabel: "स्थानीय जुड़ाव",
     connection:
-      "रोहित पाण्डेय खलीलाबाद में रहते हैं। समाजवादी पार्टी में शामिल होने के बाद से उनका राजनीतिक कार्य इसी विधानसभा क्षेत्र पर केंद्रित है।",
+      "रोहित पाण्डेय खलीलाबाद में रहते हैं, और समाजवादी पार्टी के साथ उनका कार्य इसी विधानसभा क्षेत्र पर केंद्रित है।",
     facts: [
       { k: "विधानसभा क्षेत्र", v: "संख्या 313 · खलीलाबाद" },
       { k: "ज़िला", v: "संत कबीर नगर" },

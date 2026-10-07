@@ -14,7 +14,7 @@ export const images = {
   namaste: img("rohit-pandey-namaste-portrait", 195, 249),
   /** Home About section only. Photograph, shown in a rounded frame beside the text. */
   aboutHome: img("rohit-pandey-speaking-podium", 943, 669),
-  /** Samajwadi Party milestone (journey) and the joining and Sant Kabir Nagar welcome updates. */
+  /** Samajwadi Party milestone (journey), the Akhilesh Yadav update and the Sant Kabir Nagar welcome update. */
   joining: img("rohit-pandey-akhilesh-yadav-meeting", 764, 782),
 } as const;
 
@@ -336,14 +336,14 @@ const rawUpdates: Update[] = [
     body: {
       en: [
         "Rohit Pandey took part in an organisational meeting in Vidhan Sabha 313, Sant Kabir Nagar. The meeting covered strengthening the organisation, the overall development of the area, matters of public interest, upcoming political and social strategy and the Special Intensive Revision.",
-        "With office-bearers, senior leaders and dedicated workers, he went through the basic problems of the area and the expectations and struggles of its people. The meeting stressed making the organisation more active and stronger, so that the Samajwadi Party's public-welfare policies, its ideology of social justice and constitutional values reach every household.",
-        "Under the leadership of National President Shri Akhilesh Yadav ji, all present resolved to keep raising the voice of farmers, youth, women, backward classes, Dalits and the underprivileged, and to carry forward the work for the area's development and the fight for social justice.",
+        "With office-bearers, senior colleagues and dedicated workers, he went through the basic problems of the area and the expectations and struggles of its people. The meeting stressed making the organisation more active and stronger, so that the Samajwadi Party's public-welfare policies, its ideology of social justice and constitutional values reach every household.",
+        "Guided by National President Shri Akhilesh Yadav ji, all present resolved to keep raising the voice of farmers, youth, women, backward classes, Dalits and the underprivileged, and to carry forward the work for the area's development and the fight for social justice.",
         "The people's trust is the party's greatest strength, and the work of taking socialist ideals to every home will continue on that trust.",
       ],
       hi: [
         "विधानसभा 313, संत कबीर नगर में आयोजित महत्वपूर्ण संगठनात्मक बैठक में सहभागिता कर संगठन की मजबूती, क्षेत्र के समग्र विकास, जनहित से जुड़े महत्वपूर्ण विषयों तथा आगामी राजनीतिक, सामाजिक रणनीतियों एवं विशेष गहन पुनरावलोकन से सम्बंधित विषयों पर विस्तृत चर्चा की।",
-        "बैठक में उपस्थित सम्मानित पदाधिकारियों, वरिष्ठ नेताओं एवं समर्पित कार्यकर्ताओं के साथ क्षेत्र की मूलभूत समस्याओं, जनता की अपेक्षाओं एवं संघर्षों पर गंभीर विचार-विमर्श किया गया। साथ ही समाजवादी पार्टी की जनहितकारी नीतियों, सामाजिक न्याय की विचारधारा एवं संविधानिक मूल्यों को जन-जन तक पहुँचाने हेतु संगठन को और अधिक सक्रिय एवं सशक्त बनाने पर विशेष बल दिया गया।",
-        "हम सभी ने संकल्प लिया कि समाजवादी पार्टी के राष्ट्रीय अध्यक्ष आदरणीय श्री अखिलेश यादव जी के नेतृत्व में जनता के अधिकारों, किसानों, नौजवानों, महिलाओं, पिछड़ों, दलितों एवं वंचित वर्गों की आवाज को मजबूती से उठाते हुए क्षेत्र के विकास और सामाजिक न्याय की लड़ाई को निरंतर आगे बढ़ाया जाएगा।",
+        "बैठक में उपस्थित सम्मानित पदाधिकारियों, वरिष्ठ साथियों एवं समर्पित कार्यकर्ताओं के साथ क्षेत्र की मूलभूत समस्याओं, जनता की अपेक्षाओं एवं संघर्षों पर गंभीर विचार-विमर्श किया गया। साथ ही समाजवादी पार्टी की जनहितकारी नीतियों, सामाजिक न्याय की विचारधारा एवं संविधानिक मूल्यों को जन-जन तक पहुँचाने हेतु संगठन को और अधिक सक्रिय एवं सशक्त बनाने पर विशेष बल दिया गया।",
+        "हम सभी ने संकल्प लिया कि समाजवादी पार्टी के राष्ट्रीय अध्यक्ष आदरणीय श्री अखिलेश यादव जी के मार्गदर्शन में जनता के अधिकारों, किसानों, नौजवानों, महिलाओं, पिछड़ों, दलितों एवं वंचित वर्गों की आवाज को मजबूती से उठाते हुए क्षेत्र के विकास और सामाजिक न्याय की लड़ाई को निरंतर आगे बढ़ाया जाएगा।",
         "जनता का विश्वास ही हमारी सबसे बड़ी शक्ति है और उसी विश्वास को आधार बनाकर समाजवादी विचारधारा को घर-घर तक पहुँचाने का कार्य निरंतर जारी रहेगा।",
       ],
     },
@@ -435,23 +435,21 @@ const rawUpdates: Update[] = [
       hi: "संत कबीर नगर में पार्टी कार्यकर्ताओं ने किया स्वागत",
     },
     summary: {
-      en: "After joining the Samajwadi Party, Rohit Pandey visited Sant Kabir Nagar, where party workers welcomed him.",
-      hi: "समाजवादी पार्टी में शामिल होने के बाद रोहित पाण्डेय ने संत कबीर नगर का दौरा किया, जहाँ पार्टी कार्यकर्ताओं ने उनका स्वागत किया।",
+      en: "Rohit Pandey visited Sant Kabir Nagar, where Samajwadi Party workers welcomed him.",
+      hi: "रोहित पाण्डेय ने संत कबीर नगर का दौरा किया, जहाँ समाजवादी पार्टी के कार्यकर्ताओं ने उनका स्वागत किया।",
     },
     body: {
       en: [
-        "In March 2026 Rohit Pandey joined the Samajwadi Party, led by national president Akhilesh Yadav. Soon after, he visited Sant Kabir Nagar.",
-        "Party workers gathered to welcome him, one of his first public appearances in the district as a party member.",
+        "Rohit Pandey visited Sant Kabir Nagar, where Samajwadi Party workers gathered to welcome him.",
         "Sant Kabir Nagar is familiar ground for him. He has contested the Lok Sabha election from the Sant Kabir Nagar seat before, and he is based in Khalilabad, the district headquarters. An advocate by profession, he studied at the University of Delhi.",
         "Khalilabad, assembly constituency No. 313, is one of the five assembly segments of the Sant Kabir Nagar Lok Sabha seat, along with Alapur, Menhdawal, Dhanghata and Khajani.",
-        "Since the visit, his party work has centred on the Khalilabad assembly area, including Samajwadi Party organisational work there in September 2026. His office is at Chiutna Chauraha, Khalilabad.",
+        "His party work is centred on the Khalilabad assembly area, including Samajwadi Party organisational work there in September 2026. His office is at Chiutna Chauraha, Khalilabad.",
       ],
       hi: [
-        "मार्च 2026 में रोहित पाण्डेय राष्ट्रीय अध्यक्ष अखिलेश यादव के नेतृत्व वाली समाजवादी पार्टी में शामिल हुए। इसके कुछ समय बाद उन्होंने संत कबीर नगर का दौरा किया।",
-        "दौरे के दौरान पार्टी कार्यकर्ताओं ने एकत्र होकर उनका स्वागत किया। पार्टी सदस्य के रूप में ज़िले में यह उनकी शुरुआती सार्वजनिक उपस्थितियों में से एक थी।",
+        "रोहित पाण्डेय ने संत कबीर नगर का दौरा किया, जहाँ समाजवादी पार्टी के कार्यकर्ताओं ने एकत्र होकर उनका स्वागत किया।",
         "संत कबीर नगर उनके लिए जाना-पहचाना क्षेत्र है। वे संत कबीर नगर सीट से लोकसभा चुनाव लड़ चुके हैं और ज़िला मुख्यालय खलीलाबाद में रहते हैं। वे पेशे से अधिवक्ता हैं और उन्होंने दिल्ली विश्वविद्यालय से पढ़ाई की है।",
         "खलीलाबाद (विधानसभा क्षेत्र संख्या 313) संत कबीर नगर लोकसभा सीट के पाँच विधानसभा क्षेत्रों में से एक है। बाकी चार हैं आलापुर, मेंहदावल, धनघटा और खजनी।",
-        "इस दौरे के बाद से उनका पार्टी कार्य खलीलाबाद विधानसभा क्षेत्र पर केंद्रित रहा है, जिसमें सितंबर 2026 में वहाँ समाजवादी पार्टी का संगठनात्मक कार्य भी शामिल है। उनका कार्यालय चिउटना चौराहा, खलीलाबाद में है।",
+        "उनका पार्टी कार्य खलीलाबाद विधानसभा क्षेत्र पर केंद्रित है, जिसमें सितंबर 2026 में वहाँ समाजवादी पार्टी का संगठनात्मक कार्य भी शामिल है। उनका कार्यालय चिउटना चौराहा, खलीलाबाद में है।",
       ],
     },
     image: {
@@ -463,36 +461,34 @@ const rawUpdates: Update[] = [
     },
   },
   {
-    slug: "joins-samajwadi-party",
-    date: "2026-03",
+    slug: "with-akhilesh-yadav",
+    date: "2026",
     category: { en: "Party", hi: "पार्टी" },
     title: {
-      en: "Rohit Pandey joins the Samajwadi Party",
-      hi: "रोहित पाण्डेय समाजवादी पार्टी में शामिल",
+      en: "With Samajwadi Party national president Shri Akhilesh Yadav ji",
+      hi: "समाजवादी पार्टी के राष्ट्रीय अध्यक्ष श्री अखिलेश यादव जी के साथ",
     },
     summary: {
-      en: "Rohit Pandey joined the Samajwadi Party in March 2026.",
-      hi: "रोहित पाण्डेय मार्च 2026 में समाजवादी पार्टी में शामिल हुए।",
+      en: "Rohit Pandey met Shri Akhilesh Yadav ji, national president of the Samajwadi Party.",
+      hi: "रोहित पाण्डेय ने समाजवादी पार्टी के राष्ट्रीय अध्यक्ष श्री अखिलेश यादव जी से भेंट की।",
     },
     body: {
       en: [
-        "Rohit Pandey, who is based in Khalilabad, joined the Samajwadi Party in March 2026.",
-        "A former Lok Sabha candidate from Sant Kabir Nagar, he now works with the party in the Khalilabad assembly area of Sant Kabir Nagar district.",
-        "He joined the party led by national president Shri Akhilesh Yadav ji. An advocate by profession, he studied at the University of Delhi.",
-        "Since joining, his work has centred on Khalilabad: organisational meetings, a booth-level review, and meetings with residents across the assembly area. In Lucknow he has also called on Shri Shivpal Singh Yadav ji, National General Secretary of the party.",
+        "Rohit Pandey met Shri Akhilesh Yadav ji, national president of the Samajwadi Party.",
+        "Based in Khalilabad, Rohit Pandey works for the Samajwadi Party in the Khalilabad assembly area of Sant Kabir Nagar district. A former Lok Sabha candidate from Sant Kabir Nagar, he is an advocate by profession and studied at the University of Delhi.",
+        "His work with the party is centred on Khalilabad: organisational meetings, a booth-level review, and meetings with residents across the assembly area. In Lucknow he has also called on Shri Shivpal Singh Yadav ji, National General Secretary of the party.",
       ],
       hi: [
-        "खलीलाबाद में रहने वाले रोहित पाण्डेय मार्च 2026 में समाजवादी पार्टी में शामिल हुए।",
-        "संत कबीर नगर से पूर्व लोकसभा प्रत्याशी रह चुके रोहित पाण्डेय अब संत कबीर नगर ज़िले के खलीलाबाद विधानसभा क्षेत्र में पार्टी के साथ काम कर रहे हैं।",
-        "वे राष्ट्रीय अध्यक्ष श्री अखिलेश यादव जी के नेतृत्व वाली पार्टी में शामिल हुए। वे पेशे से अधिवक्ता हैं और उन्होंने दिल्ली विश्वविद्यालय से पढ़ाई की है।",
-        "पार्टी में शामिल होने के बाद से उनका कार्य खलीलाबाद पर केंद्रित है: संगठनात्मक बैठकें, बूथ स्तर की समीक्षा और पूरे विधानसभा क्षेत्र में क्षेत्रवासियों से भेंट। लखनऊ में उन्होंने पार्टी के राष्ट्रीय महासचिव श्री शिवपाल सिंह यादव जी से भी शिष्टाचार भेंट की है।",
+        "रोहित पाण्डेय ने समाजवादी पार्टी के राष्ट्रीय अध्यक्ष श्री अखिलेश यादव जी से भेंट की।",
+        "खलीलाबाद में रहने वाले रोहित पाण्डेय संत कबीर नगर ज़िले के खलीलाबाद विधानसभा क्षेत्र में समाजवादी पार्टी के लिए काम करते हैं। संत कबीर नगर से पूर्व लोकसभा प्रत्याशी रह चुके रोहित पाण्डेय पेशे से अधिवक्ता हैं और उन्होंने दिल्ली विश्वविद्यालय से पढ़ाई की है।",
+        "पार्टी के साथ उनका कार्य खलीलाबाद पर केंद्रित है: संगठनात्मक बैठकें, बूथ स्तर की समीक्षा और पूरे विधानसभा क्षेत्र में क्षेत्रवासियों से भेंट। लखनऊ में उन्होंने पार्टी के राष्ट्रीय महासचिव श्री शिवपाल सिंह यादव जी से भी शिष्टाचार भेंट की है।",
       ],
     },
     image: {
       ...images.joining,
       alt: {
-        en: "Rohit Pandey greeting Samajwadi Party national president Akhilesh Yadav",
-        hi: "समाजवादी पार्टी के राष्ट्रीय अध्यक्ष अखिलेश यादव से भेंट करते रोहित पाण्डेय",
+        en: "Rohit Pandey greeting Samajwadi Party national president Shri Akhilesh Yadav ji",
+        hi: "समाजवादी पार्टी के राष्ट्रीय अध्यक्ष श्री अखिलेश यादव जी से भेंट करते रोहित पाण्डेय",
       },
     },
   },
