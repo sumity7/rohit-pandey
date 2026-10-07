@@ -110,11 +110,13 @@ const rawUpdates: Update[] = [
         "Rohit Pandey visited his office at Chiutna Chauraha in the Khalilabad assembly area (No. 313), Sant Kabir Nagar, and reviewed the arrangements there.",
         "He met colleagues and residents of the area and discussed issues of public interest, local problems and how to strengthen the organisation.",
         "Block Pramukh representative Shri Mumtaz Ahmad, along with colleagues and dignitaries of the area, was present. The affection, support and trust of colleagues keeps the work of the socialist movement going.",
+        "The office at Chiutna Chauraha is the base for Rohit Pandey's work in Khalilabad. Residents can visit to meet him and raise their concerns, or write to the office through the contact page of this website.",
       ],
       hi: [
         "रोहित पाण्डेय ने खलीलाबाद विधानसभा-313, संत कबीर नगर के चिउटना चौराहा स्थित अपने कार्यालय पर पहुंचकर व्यवस्थाओं का जायजा लिया।",
         "इस दौरान क्षेत्र के सम्मानित साथियों एवं क्षेत्रवासियों से आत्मीय मुलाकात कर जनहित के मुद्दों, क्षेत्रीय समस्याओं एवं संगठन को मजबूत करने को लेकर सार्थक चर्चा हुई।",
         "ब्लॉक प्रमुख प्रतिनिधि श्री मुमताज अहमद सहित क्षेत्र के सम्मानित साथियों एवं गणमान्यजनों की उपस्थिति रही। साथियों का स्नेह, सहयोग और विश्वास समाजवादी विचारधारा को मजबूत करने की निरंतर प्रेरणा है।",
+        "चिउटना चौराहा स्थित यह कार्यालय खलीलाबाद में रोहित पाण्डेय के कार्य का केंद्र है। क्षेत्रवासी यहाँ आकर मिल सकते हैं और अपनी बात रख सकते हैं, या वेबसाइट के संपर्क पृष्ठ से कार्यालय को लिख सकते हैं।",
       ],
     },
     image: {
@@ -124,15 +126,6 @@ const rawUpdates: Update[] = [
         hi: "खलीलाबाद के चिउटना चौराहा स्थित कार्यालय पर साथियों एवं क्षेत्रवासियों के साथ रोहित पाण्डेय",
       },
     },
-    gallery: [
-      {
-        ...img("rohit-pandey-chiutna-chauraha-office-02", 1280, 854),
-        alt: {
-          en: "Meeting with colleagues and residents at the Chiutna Chauraha office",
-          hi: "चिउटना चौराहा कार्यालय पर साथियों एवं क्षेत्रवासियों के साथ बैठक",
-        },
-      },
-    ],
   },
   {
     slug: "courtesy-visit-kushal-tiwari-gorakhpur",
@@ -151,10 +144,12 @@ const rawUpdates: Update[] = [
       en: [
         "Rohit Pandey paid a courtesy call on Shri Bhishma Shankar Tiwari, popularly known as Kushal Tiwari, former Member of Parliament from Sant Kabir Nagar, at his residence “Tiwari Hata” in Gorakhpur.",
         "He and Shri Tiwari discussed strategy for the 2027 Assembly election and social issues.",
+        "Shri Tiwari has represented Sant Kabir Nagar in the Lok Sabha. It is the same seat (No. 62) from which Rohit Pandey has contested, and its five assembly segments include Khalilabad, where his own work is now focused.",
       ],
       hi: [
         "रोहित पाण्डेय ने संत कबीर नगर के पूर्व सांसद श्री भीष्म शंकर तिवारी उर्फ कुशल तिवारी जी के आवास “तिवारी हाता”, गोरखपुर पहुँचकर शिष्टाचार भेंट की।",
         "श्री तिवारी जी के साथ आगामी 2027 के विधानसभा चुनाव की रणनीतियों एवं सामाजिक विषयों पर चर्चा हुई।",
+        "श्री तिवारी जी लोकसभा में संत कबीर नगर का प्रतिनिधित्व कर चुके हैं। रोहित पाण्डेय भी इसी सीट (संख्या 62) से चुनाव लड़ चुके हैं, और इसके पाँच विधानसभा क्षेत्रों में खलीलाबाद भी है, जहाँ अब उनका कार्य केंद्रित है।",
       ],
     },
     image: {
@@ -182,10 +177,14 @@ const rawUpdates: Update[] = [
       en: [
         "Rohit Pandey visited Kekarhwa Chauraha on Thurunda Road in the Khalilabad assembly area and met the people of the area, asking after their well-being. He held a useful discussion on the 2027 Assembly election.",
         "He talked through the development of the area, the problems residents face and other matters of public interest, and listened to their suggestions and views.",
+        "The conversation took place in the open, outside the shops at the chauraha, with residents and party workers seated together.",
+        "On the same day, 18 September, he also spent time among residents elsewhere in the Khalilabad assembly area. A video of that visit is in Public Life.",
       ],
       hi: [
         "रोहित पाण्डेय ने खलीलाबाद विधानसभा क्षेत्र के थूरंडा रोड स्थित केकरहवा चौराहे पर पहुँचकर देवतुल्य क्षेत्रवासियों से आत्मीय भेंट कर उनका कुशल-क्षेम जाना एवं आगामी विधानसभा चुनाव-2027 को लेकर सार्थक चर्चा की।",
         "इस दौरान क्षेत्र के विकास, जनसमस्याओं एवं जनहित से जुड़े विभिन्न विषयों पर विस्तारपूर्वक चर्चा करते हुए क्षेत्रवासियों के सुझावों एवं विचारों को सुना।",
+        "यह बातचीत चौराहे की दुकानों के बाहर खुले में हुई, जहाँ क्षेत्रवासी और पार्टी कार्यकर्ता साथ बैठे।",
+        "उसी दिन, 18 सितंबर को, वे खलीलाबाद विधानसभा क्षेत्र में अन्य जगहों पर भी क्षेत्रवासियों के बीच पहुँचे। उस दौरे का वीडियो जनजीवन में देखा जा सकता है।",
       ],
     },
     image: {
@@ -201,20 +200,6 @@ const rawUpdates: Update[] = [
         alt: {
           en: "Rohit Pandey in conversation with a resident at Kekarhwa Chauraha",
           hi: "केकरहवा चौराहे पर एक क्षेत्रवासी से बातचीत करते रोहित पाण्डेय",
-        },
-      },
-      {
-        ...img("rohit-pandey-kekarhwa-chauraha-group-02", 1280, 854),
-        alt: {
-          en: "Rohit Pandey listening to residents at Kekarhwa Chauraha",
-          hi: "केकरहवा चौराहे पर क्षेत्रवासियों की बात सुनते रोहित पाण्डेय",
-        },
-      },
-      {
-        ...img("rohit-pandey-kekarhwa-chauraha-group-03", 1280, 854),
-        alt: {
-          en: "Rohit Pandey with residents and party workers at Kekarhwa Chauraha",
-          hi: "केकरहवा चौराहे पर क्षेत्रवासियों एवं कार्यकर्ताओं के साथ रोहित पाण्डेय",
         },
       },
     ],
@@ -233,8 +218,16 @@ const rawUpdates: Update[] = [
       hi: "खलीलाबाद विधानसभा क्षेत्र में क्षेत्रवासियों के बीच रोहित पाण्डेय के दौरे का वीडियो।",
     },
     body: {
-      en: ["Rohit Pandey among the people of the Khalilabad assembly area. Watch the video of the visit."],
-      hi: ["अपने खलीलाबाद विधानसभा क्षेत्र में देवतुल्य क्षेत्रवासियों के बीच।"],
+      en: [
+        "On 18 September 2026 Rohit Pandey spent time among the people of the Khalilabad assembly area (No. 313), Sant Kabir Nagar. The video shows the visit.",
+        "On the same day he met residents at Kekarhwa Chauraha on Thurunda Road, asked after their well-being and discussed the development of the area, local problems and the 2027 Assembly election.",
+        "The visit came a day after his meeting with the Rajbhar community at Gram Sabha Mohanbara (Bayara), also in the Khalilabad assembly area.",
+      ],
+      hi: [
+        "18 सितंबर 2026 को रोहित पाण्डेय अपने खलीलाबाद विधानसभा क्षेत्र (संख्या 313), संत कबीर नगर में देवतुल्य क्षेत्रवासियों के बीच पहुँचे। वीडियो में यही दौरा है।",
+        "उसी दिन उन्होंने थूरंडा रोड स्थित केकरहवा चौराहे पर क्षेत्रवासियों से भेंट कर उनका कुशल-क्षेम जाना और क्षेत्र के विकास, जनसमस्याओं एवं विधानसभा चुनाव-2027 पर चर्चा की।",
+        "यह दौरा ग्रामसभा मोहनबरा (बयारा) में राजभर समाज के साथियों के साथ हुई बैठक के अगले दिन हुआ, जो खलीलाबाद विधानसभा क्षेत्र में ही है।",
+      ],
     },
     video: {
       src: "/videos/rohit-pandey-khalilabad-18-september.mp4",
@@ -398,19 +391,39 @@ const rawUpdates: Update[] = [
       hi: "खलीलाबाद विधानसभा क्षेत्र में संगठनात्मक कार्य",
     },
     summary: {
-      en: "In September 2026 Rohit Pandey took part in Samajwadi Party organisational work in the Khalilabad assembly area.",
-      hi: "सितंबर 2026 में रोहित पाण्डेय ने खलीलाबाद विधानसभा क्षेत्र में समाजवादी पार्टी के संगठनात्मक कार्य में हिस्सा लिया।",
+      en: "Through September 2026 Rohit Pandey worked on Samajwadi Party organisation in the Khalilabad assembly area, from a booth-level review to meetings in villages and chauraha.",
+      hi: "सितंबर 2026 में रोहित पाण्डेय ने खलीलाबाद विधानसभा क्षेत्र में बूथ स्तर की समीक्षा से लेकर गाँवों और चौराहों पर बैठकों तक, समाजवादी पार्टी के संगठनात्मक कार्य में हिस्सा लिया।",
     },
     body: {
       en: [
-        "In September 2026 Rohit Pandey took part in Samajwadi Party organisational work in the Khalilabad assembly area.",
+        "Through September 2026 Rohit Pandey took part in Samajwadi Party organisational work in the Khalilabad assembly area.",
+        "On 8 September he attended the review meeting of booth presidents and sector in-charges at Shakahari Marriage Hall, Badhgo, Khalilabad, where the focus was on strengthening the organisation down to the booth level and activating workers.",
+        "On 17 September he met members of the Rajbhar community at Gram Sabha Mohanbara (Bayara). On 18 September he met residents at Kekarhwa Chauraha on Thurunda Road and heard about local problems and the development of the area.",
         "Khalilabad (assembly constituency No. 313) is the headquarters of Sant Kabir Nagar district and one of the five assembly segments of the Sant Kabir Nagar Lok Sabha seat.",
       ],
       hi: [
-        "सितंबर 2026 में रोहित पाण्डेय ने खलीलाबाद विधानसभा क्षेत्र में समाजवादी पार्टी के संगठनात्मक कार्य में हिस्सा लिया।",
+        "सितंबर 2026 में रोहित पाण्डेय ने खलीलाबाद विधानसभा क्षेत्र में समाजवादी पार्टी के संगठनात्मक कार्य में लगातार हिस्सा लिया।",
+        "8 सितंबर को वे शाकाहारी मैरिज हॉल, बढ़गो, खलीलाबाद में बूथ अध्यक्षों एवं सेक्टर प्रभारियों की समीक्षा बैठक में सम्मिलित हुए, जहाँ बूथ स्तर तक संगठन को मजबूत करने और कार्यकर्ताओं को सक्रिय करने पर चर्चा हुई।",
+        "17 सितंबर को उन्होंने ग्रामसभा मोहनबरा (बयारा) में राजभर समाज के साथियों के साथ बैठक की। 18 सितंबर को थूरंडा रोड स्थित केकरहवा चौराहे पर क्षेत्रवासियों से भेंट कर जनसमस्याओं और क्षेत्र के विकास पर उनकी बात सुनी।",
         "खलीलाबाद (विधानसभा क्षेत्र संख्या 313) संत कबीर नगर ज़िले का मुख्यालय है और संत कबीर नगर लोकसभा सीट के पाँच विधानसभा क्षेत्रों में से एक है।",
       ],
     },
+    image: {
+      ...img("rohit-pandey-mohanbara-rajbhar-samaj-meeting", 1504, 1004),
+      alt: {
+        en: "17 September 2026: meeting with the Rajbhar community at Mohanbara (Bayara), Khalilabad",
+        hi: "17 सितंबर 2026: मोहनबरा (बयारा), खलीलाबाद में राजभर समाज के साथियों के साथ बैठक",
+      },
+    },
+    gallery: [
+      {
+        ...img("rohit-pandey-kekarhwa-chauraha-khalilabad", 1280, 854),
+        alt: {
+          en: "18 September 2026: meeting residents at Kekarhwa Chauraha, Thurunda Road",
+          hi: "18 सितंबर 2026: थूरंडा रोड स्थित केकरहवा चौराहे पर क्षेत्रवासियों से भेंट",
+        },
+      },
+    ],
   },
   {
     slug: "welcomed-in-sant-kabir-nagar",
@@ -465,10 +478,14 @@ const rawUpdates: Update[] = [
       en: [
         "Rohit Pandey, who is based in Khalilabad, joined the Samajwadi Party in March 2026.",
         "A former Lok Sabha candidate from Sant Kabir Nagar, he now works with the party in the Khalilabad assembly area of Sant Kabir Nagar district.",
+        "He joined the party led by national president Shri Akhilesh Yadav ji. An advocate by profession, he studied at the University of Delhi.",
+        "Since joining, his work has centred on Khalilabad: organisational meetings, a booth-level review, and meetings with residents across the assembly area. In Lucknow he has also called on Shri Shivpal Singh Yadav ji, National General Secretary of the party.",
       ],
       hi: [
         "खलीलाबाद में रहने वाले रोहित पाण्डेय मार्च 2026 में समाजवादी पार्टी में शामिल हुए।",
         "संत कबीर नगर से पूर्व लोकसभा प्रत्याशी रह चुके रोहित पाण्डेय अब संत कबीर नगर ज़िले के खलीलाबाद विधानसभा क्षेत्र में पार्टी के साथ काम कर रहे हैं।",
+        "वे राष्ट्रीय अध्यक्ष श्री अखिलेश यादव जी के नेतृत्व वाली पार्टी में शामिल हुए। वे पेशे से अधिवक्ता हैं और उन्होंने दिल्ली विश्वविद्यालय से पढ़ाई की है।",
+        "पार्टी में शामिल होने के बाद से उनका कार्य खलीलाबाद पर केंद्रित है: संगठनात्मक बैठकें, बूथ स्तर की समीक्षा और पूरे विधानसभा क्षेत्र में क्षेत्रवासियों से भेंट। लखनऊ में उन्होंने पार्टी के राष्ट्रीय महासचिव श्री शिवपाल सिंह यादव जी से भी शिष्टाचार भेंट की है।",
       ],
     },
     image: {
