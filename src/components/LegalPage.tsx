@@ -6,7 +6,7 @@ export default function LegalPage({ sections, updated }: { sections: { h: string
         <div className="mt-10 divide-y divide-line border-y border-line">
           {sections.map((s) => (
             <section key={s.h} className="py-8">
-              <h2 className="font-display text-xl font-semibold">{s.h}</h2>
+              <h2 className="font-display text-xl font-black">{s.h}</h2>
               <p className="mt-3 text-ink-soft">{s.p}</p>
             </section>
           ))}

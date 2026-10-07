@@ -22,6 +22,10 @@ npm run check:dashes   # fails if any em or en dash is found under src/ (also ru
 | `NEXT_PUBLIC_OFFICE_EMAIL` | Office email shown on the contact page. |
 | `NEXT_PUBLIC_JOIN_URL` | WhatsApp channel or group invite for "Join the campaign". Without it the button opens the enquiry form. |
 | `CONTACT_WEBHOOK_URL` | Where contact-form submissions are POSTed as JSON (form service, Slack/Teams webhook, CRM). Without it, production shows the form's error state rather than silently dropping messages. In development, messages are logged to the console. |
+| `GEMINI_API_KEY` | Google Gemini API key for the AI assistant. Server-side only: never prefix it with `NEXT_PUBLIC_`. Put it in `.env.local` for development and in the Vercel project settings for production. |
+| `GROQ_API_KEY` | Groq API key, an alternative provider for the assistant. Same rules: server-side only, `.env.local` locally, Vercel settings in production. The free tier allows about 8,000 tokens per minute, which is roughly one to three questions a minute, so use a paid tier or Gemini for real traffic. |
+| `AI_PROVIDER` | Optional: `gemini` or `groq`. When unset, Gemini is used if its key exists, otherwise Groq. With no key the assistant shows a "not available" message. |
+| `GEMINI_MODEL` / `GROQ_MODEL` | Optional model overrides. Defaults: `gemini-3.5-flash` and `openai/gpt-oss-120b`. |
 | `NEXT_PUBLIC_SHOW_CONTENT_SLOTS` | Set to `true` to show the dashed "Content slot" placeholders (vision text, press links, office hours) for review with the office. They are hidden on the public site by default. |
 
 ## Where things live
@@ -30,6 +34,7 @@ npm run check:dashes   # fails if any em or en dash is found under src/ (also ru
 - `src/lib/content.ts` — image registry, gallery order, updates (articles), the static YouTube fallback list, `visionItems` and `pressItems`.
 - `src/lib/youtube.ts` — live videos from the channel feed (cached for an hour).
 - `src/lib/site.ts` — social links, coordinates, site URL.
+- `src/app/api/ai-assistant/route.ts`, `src/lib/assistant/`, `src/components/assistant/`: the AI assistant. The route validates input and calls Gemini; `knowledge.ts` builds the assistant's knowledge from the dictionary, updates and social-service files, so editing site content updates the assistant too. Its UI strings are under `assistant` in the dictionary.
 - `public/images/` — optimised WebP files made from the client's originals (cutouts: background removed only, people unaltered).
 - `public/og/rohit-pandey.jpg` — Open Graph image.
 

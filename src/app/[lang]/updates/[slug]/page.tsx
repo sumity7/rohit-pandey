@@ -111,7 +111,7 @@ export default async function UpdatePage({ params }: Props) {
         )}
 
         {update.image && (
-          <figure className="order-first md:order-none md:col-span-5 md:col-start-8 lg:col-span-4 lg:col-start-9">
+          <figure className="order-first md:sticky md:top-[calc(var(--nav-h)+1.5rem)] md:order-none md:col-span-5 md:col-start-8 md:self-start lg:col-span-4 lg:col-start-9">
             <div className="overflow-hidden rounded-md bg-sand">
               <Image
                 src={update.image.src}
@@ -152,7 +152,7 @@ export default async function UpdatePage({ params }: Props) {
       {others.length > 0 && (
         <section aria-labelledby="more-updates" className="surface-tint">
           <div className="shell py-16 md:py-20">
-            <h2 id="more-updates" className="text-xl font-semibold">
+            <h2 id="more-updates" className="text-xl font-black">
               {t.updates.more}
             </h2>
             <ul className="mt-8 grid gap-4 md:grid-cols-2">

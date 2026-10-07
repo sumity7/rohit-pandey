@@ -24,7 +24,7 @@ export default async function ContactPage({ params }: PageProps<"/[lang]/contact
       />
       <OfficeSection lang={lang} t={t} heading={false} />
       <section aria-labelledby="follow-title" className="shell py-16 md:py-24">
-        <h2 id="follow-title" className="text-xl font-semibold">
+        <h2 id="follow-title" className="text-xl font-black">
           {c.channels}
         </h2>
         <SocialLinks variant="list" className="mt-6 max-w-xl" />

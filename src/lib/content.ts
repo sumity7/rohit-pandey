@@ -14,7 +14,7 @@ export const images = {
   namaste: img("rohit-pandey-namaste-portrait", 195, 249),
   /** Home About section only. Photograph, shown in a rounded frame beside the text. */
   aboutHome: img("rohit-pandey-speaking-podium", 943, 669),
-  /** Samajwadi Party milestone (journey) only. */
+  /** Samajwadi Party milestone (journey) and the joining and Sant Kabir Nagar welcome updates. */
   joining: img("rohit-pandey-akhilesh-yadav-meeting", 764, 782),
 } as const;
 
@@ -427,13 +427,26 @@ const rawUpdates: Update[] = [
     },
     body: {
       en: [
-        "After joining the Samajwadi Party, Rohit Pandey visited Sant Kabir Nagar.",
+        "In March 2026 Rohit Pandey joined the Samajwadi Party, led by national president Akhilesh Yadav. Soon after, he visited Sant Kabir Nagar.",
         "Party workers gathered to welcome him, one of his first public appearances in the district as a party member.",
+        "Sant Kabir Nagar is familiar ground for him. He has contested the Lok Sabha election from the Sant Kabir Nagar seat before, and he is based in Khalilabad, the district headquarters. An advocate by profession, he studied at the University of Delhi.",
+        "Khalilabad, assembly constituency No. 313, is one of the five assembly segments of the Sant Kabir Nagar Lok Sabha seat, along with Alapur, Menhdawal, Dhanghata and Khajani.",
+        "Since the visit, his party work has centred on the Khalilabad assembly area, including Samajwadi Party organisational work there in September 2026. His office is at Chiutna Chauraha, Khalilabad.",
       ],
       hi: [
-        "समाजवादी पार्टी में शामिल होने के बाद रोहित पाण्डेय ने संत कबीर नगर का दौरा किया।",
+        "मार्च 2026 में रोहित पाण्डेय राष्ट्रीय अध्यक्ष अखिलेश यादव के नेतृत्व वाली समाजवादी पार्टी में शामिल हुए। इसके कुछ समय बाद उन्होंने संत कबीर नगर का दौरा किया।",
         "दौरे के दौरान पार्टी कार्यकर्ताओं ने एकत्र होकर उनका स्वागत किया। पार्टी सदस्य के रूप में ज़िले में यह उनकी शुरुआती सार्वजनिक उपस्थितियों में से एक थी।",
+        "संत कबीर नगर उनके लिए जाना-पहचाना क्षेत्र है। वे संत कबीर नगर सीट से लोकसभा चुनाव लड़ चुके हैं और ज़िला मुख्यालय खलीलाबाद में रहते हैं। वे पेशे से अधिवक्ता हैं और उन्होंने दिल्ली विश्वविद्यालय से पढ़ाई की है।",
+        "खलीलाबाद (विधानसभा क्षेत्र संख्या 313) संत कबीर नगर लोकसभा सीट के पाँच विधानसभा क्षेत्रों में से एक है। बाकी चार हैं आलापुर, मेंहदावल, धनघटा और खजनी।",
+        "इस दौरे के बाद से उनका पार्टी कार्य खलीलाबाद विधानसभा क्षेत्र पर केंद्रित रहा है, जिसमें सितंबर 2026 में वहाँ समाजवादी पार्टी का संगठनात्मक कार्य भी शामिल है। उनका कार्यालय चिउटना चौराहा, खलीलाबाद में है।",
       ],
+    },
+    image: {
+      ...images.joining,
+      alt: {
+        en: "Rohit Pandey with Samajwadi Party national president Akhilesh Yadav",
+        hi: "समाजवादी पार्टी के राष्ट्रीय अध्यक्ष अखिलेश यादव के साथ रोहित पाण्डेय",
+      },
     },
   },
   {

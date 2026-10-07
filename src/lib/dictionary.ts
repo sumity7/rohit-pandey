@@ -373,6 +373,42 @@ const en = {
     title: "This page could not be found",
     body: "The link may be out of date, or the page may have moved.",
   },
+  assistant: {
+    name: "Rohit Pandey Assistant",
+    open: "Open the Rohit Pandey Assistant",
+    close: "Close the assistant",
+    clear: "Clear conversation",
+    welcome: "Hello! Ask about Rohit Pandey, his public work, political journey or Sant Kabir Nagar.",
+    suggestionsLabel: "Suggested questions",
+    suggestions: [
+      "Who is Rohit Pandey?",
+      "Tell me about his political journey.",
+      "What is his connection with Khalilabad?",
+      "What public work has he been involved in?",
+    ],
+    askMore: "Ask another question",
+    followUps: [
+      "What are his latest updates?",
+      "Where is his office?",
+      "How can I contact the office?",
+      "What issues does he work on?",
+    ],
+    inputLabel: "Your question",
+    placeholder: "Ask a question",
+    send: "Send message",
+    typing: "The assistant is typing",
+    you: "You",
+    assistant: "Assistant",
+    conversation: "Conversation",
+    retry: "Try again",
+    errors: {
+      generic: "Sorry, I could not answer just now. Please try again in a moment.",
+      busy: "Too many questions in a short time. Please wait a minute and try again.",
+      unavailable: "The assistant is not available right now. Please try again later.",
+      network: "Could not reach the assistant. Please check your connection and try again.",
+      empty: "I could not put together an answer to that. Please try rephrasing your question.",
+    },
+  },
 };
 
 export type Dict = typeof en;
@@ -743,6 +779,43 @@ const hi: Dict = {
   notFound: {
     title: "यह पृष्ठ नहीं मिला",
     body: "हो सकता है लिंक पुराना हो, या पृष्ठ कहीं और चला गया हो।",
+  },
+  assistant: {
+    name: "रोहित पाण्डेय सहायक",
+    open: "रोहित पाण्डेय सहायक खोलें",
+    close: "सहायक बंद करें",
+    clear: "बातचीत साफ़ करें",
+    welcome:
+      "नमस्कार! रोहित पाण्डेय, उनके सार्वजनिक कार्य, राजनीतिक यात्रा या संत कबीर नगर के बारे में पूछें।",
+    suggestionsLabel: "सुझाए गए प्रश्न",
+    suggestions: [
+      "रोहित पाण्डेय कौन हैं?",
+      "उनकी राजनीतिक यात्रा के बारे में बताइए।",
+      "खलीलाबाद से उनका क्या संबंध है?",
+      "उनके सार्वजनिक कार्यों के बारे में बताइए।",
+    ],
+    askMore: "एक और प्रश्न पूछें",
+    followUps: [
+      "उनके ताज़ा अपडेट क्या हैं?",
+      "उनका कार्यालय कहाँ है?",
+      "कार्यालय से संपर्क कैसे करें?",
+      "वे किन मुद्दों पर काम करते हैं?",
+    ],
+    inputLabel: "आपका प्रश्न",
+    placeholder: "अपना प्रश्न लिखें",
+    send: "संदेश भेजें",
+    typing: "सहायक उत्तर लिख रहा है",
+    you: "आप",
+    assistant: "सहायक",
+    conversation: "बातचीत",
+    retry: "फिर से कोशिश करें",
+    errors: {
+      generic: "क्षमा करें, अभी उत्तर नहीं दे पाया। कृपया थोड़ी देर बाद फिर कोशिश करें।",
+      busy: "थोड़े समय में बहुत प्रश्न आ गए हैं। कृपया एक मिनट रुककर फिर कोशिश करें।",
+      unavailable: "सहायक अभी उपलब्ध नहीं है। कृपया बाद में फिर कोशिश करें।",
+      network: "सहायक तक नहीं पहुँच सका। कृपया अपना इंटरनेट जाँचकर फिर कोशिश करें।",
+      empty: "इस प्रश्न का उत्तर तैयार नहीं हो सका। कृपया प्रश्न को दूसरे शब्दों में लिखें।",
+    },
   },
 };
 

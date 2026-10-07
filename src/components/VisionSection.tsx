@@ -23,7 +23,7 @@ export default function VisionSection({ lang, t }: { lang: Locale; t: Dict }) {
             {visionItems.map((item, i) => (
               <li key={item.id} className="border-t border-ink/60 pt-5">
                 <span className="text-sm font-semibold text-red">{String(i + 1).padStart(2, "0")}</span>
-                <h3 className="mt-2 text-xl font-semibold leading-snug">{item.title[lang]}</h3>
+                <h3 className="mt-2 text-xl font-black leading-snug">{item.title[lang]}</h3>
                 <p className="mt-2 text-ink-soft">{item.body[lang]}</p>
               </li>
             ))}

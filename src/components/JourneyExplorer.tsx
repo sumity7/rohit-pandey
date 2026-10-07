@@ -106,7 +106,7 @@ export default function JourneyExplorer({
                       {String(i + 1).padStart(2, "0")} / {String(chapters.length).padStart(2, "0")}
                     </p>
                   )}
-                  <p className="font-display text-[clamp(1.5rem,1.2rem+1.4vw,2.5rem)] font-semibold leading-none tracking-[-0.03em] text-red [&:lang(hi)]:leading-tight [&:lang(hi)]:tracking-normal">
+                  <p className="font-display text-[clamp(1.5rem,1.2rem+1.4vw,2.5rem)] font-black leading-none tracking-[-0.03em] text-red [&:lang(hi)]:leading-tight [&:lang(hi)]:tracking-normal">
                     {c.era}
                   </p>
                   <h3 className="title-md mt-4">{c.title}</h3>

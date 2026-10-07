@@ -31,7 +31,7 @@ export default function OfficeSection({
 
         <div className={`${heading ? "mt-12" : ""} grid gap-12 lg:grid-cols-12 lg:gap-14`}>
           <div className="min-w-0 lg:col-span-5">
-            <h3 className="text-xl font-semibold">{o.label}</h3>
+            <h3 className="text-xl font-black">{o.label}</h3>
             <address className="mt-3 not-italic text-ink-soft">{o.address}</address>
 
             {hasChannels && (
@@ -86,7 +86,7 @@ export default function OfficeSection({
             </a>
 
             <div className="mt-10 border-t border-ink/60 pt-6">
-              <h3 className="text-xl font-semibold">{c.join.title}</h3>
+              <h3 className="text-xl font-black">{c.join.title}</h3>
               <p className="mt-2 text-ink-soft">{c.join.body}</p>
               {office.joinUrl ? (
                 <a href={joinHref} target="_blank" rel="noopener noreferrer" className="btn mt-5 bg-green-dk text-white hover:bg-green-deep">

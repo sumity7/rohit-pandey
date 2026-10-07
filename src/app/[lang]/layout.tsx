@@ -1,13 +1,14 @@
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import "../globals.css";
+import AssistantLauncher from "@/components/assistant/AssistantLauncher";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StickyContact from "@/components/StickyContact";
 import { getDictionary } from "@/lib/dictionary";
 import { fontVars } from "@/lib/fonts";
 import { hasLocale, htmlLang, locales } from "@/lib/i18n";
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, office } from "@/lib/site";
 
 export const dynamicParams = false;
 
@@ -55,6 +56,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
         </main>
         <Footer lang={lang} t={t} />
         <StickyContact t={t} />
+        <AssistantLauncher lang={lang} t={t.assistant} raised={Boolean(office.phone || office.whatsapp)} />
       </body>
     </html>
   );

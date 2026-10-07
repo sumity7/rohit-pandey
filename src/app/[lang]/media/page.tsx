@@ -75,7 +75,7 @@ export default async function MediaPage({ params }: PageProps<"/[lang]/media">) 
 
           {fieldVideos.length > 0 && (
             <div className="mt-12">
-              <h3 className="mb-8 text-xl font-semibold">{m.fieldVideos}</h3>
+              <h3 className="mb-8 text-xl font-black">{m.fieldVideos}</h3>
               <FeaturedVideo
                 items={fieldVideos}
                 labels={{ play: t.videos.play, readMore: t.videos.readMore, more: t.videos.more }}
@@ -85,7 +85,7 @@ export default async function MediaPage({ params }: PageProps<"/[lang]/media">) 
 
           <div className="mt-20">
             <div className="mb-8 flex flex-wrap items-baseline justify-between gap-4">
-              <h3 className="text-xl font-semibold">{t.social.youtube}</h3>
+              <h3 className="text-xl font-black">{t.social.youtube}</h3>
               <a
                 href={YOUTUBE_CHANNEL_URL}
                 target="_blank"

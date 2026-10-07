@@ -12,7 +12,7 @@ export default function NewsStrip({ lang, t }: { lang: Locale; t: Dict }) {
   return (
     <section aria-labelledby="news-title" className="bg-white pb-20 md:pb-28">
       <div className="shell border-t border-line pt-10">
-        <h2 id="news-title" className="text-xl font-semibold">
+        <h2 id="news-title" className="text-xl font-black">
           {t.news.title}
         </h2>
         {pressItems.length > 0 ? (

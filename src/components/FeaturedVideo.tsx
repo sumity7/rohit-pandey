@@ -85,7 +85,7 @@ export default function FeaturedVideo({ items, labels }: { items: FeaturedVideoI
           {v.location && <span className="text-muted">{v.location}</span>}
           <span className="text-muted">{v.category}</span>
         </p>
-        <h3 className="mt-4 font-display text-2xl font-semibold leading-snug tracking-[-0.01em] md:text-3xl [&:lang(hi)]:leading-normal [&:lang(hi)]:tracking-normal">
+        <h3 className="mt-4 font-display text-2xl font-black leading-snug tracking-[-0.01em] md:text-3xl [&:lang(hi)]:leading-normal [&:lang(hi)]:tracking-normal">
           {v.title}
         </h3>
         <p className="mt-4 max-w-xl text-ink-soft">{v.summary}</p>

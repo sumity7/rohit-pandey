@@ -55,7 +55,7 @@ export default function YouTubePlayer({ videos, labels }: { videos: PlayerVideo[
         )}
       </div>
       <p className="mt-3 text-sm text-muted">{current.date}</p>
-      <h3 className="mt-1 text-lg font-semibold leading-snug">{current.title}</h3>
+      <h3 className="mt-1 text-lg font-black leading-snug">{current.title}</h3>
 
       {rest.length > 0 && (
         <div className="mt-8">

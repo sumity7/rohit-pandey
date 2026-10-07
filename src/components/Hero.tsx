@@ -79,7 +79,7 @@ export default function Hero({ lang, t }: { lang: Locale; t: Dict }) {
 
         <div className="shell relative flex min-h-[calc(var(--nav-h)+56.25vw+1.5rem)] items-start pb-6 pt-[calc(var(--nav-h)+1.25rem)] md:min-h-[calc(var(--nav-h)+55.8vw+2rem)] xl:min-h-[max(40.5rem,min(calc(100svh-5px),90rem))] xl:items-center xl:pb-16 xl:pt-[calc(var(--nav-h)+1rem)]">
           <div className="anim-rise w-full xl:w-auto xl:max-w-[min(36vw,34rem)]">
-            <p className="flex items-start gap-2.5 text-[0.75rem] font-semibold uppercase leading-snug tracking-[0.1em] text-ink-soft before:mt-[0.6em] before:h-0.5 before:w-5 before:shrink-0 before:bg-white/80 before:content-[''] sm:text-[0.8125rem] sm:tracking-[0.12em] xl:gap-3 xl:text-xs xl:tracking-[0.16em] xl:before:w-7 [&:lang(hi)]:text-[0.875rem] [&:lang(hi)]:normal-case">
+            <p className="text-[0.75rem] font-semibold uppercase leading-snug tracking-[0.1em] text-ink-soft sm:text-[0.8125rem] sm:tracking-[0.12em] xl:text-xs xl:tracking-[0.16em] [&:lang(hi)]:text-[0.875rem] [&:lang(hi)]:normal-case">
               {hero.eyebrow}
             </p>
 
